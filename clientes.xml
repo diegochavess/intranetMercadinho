@@ -10,8 +10,8 @@
     <email>dieguinhochaves@hotmail.com</email>
     <sexo>masculino</sexo>
     <profissao>Administrador de Redes</profissao>
-    <renda>R$ 3.000,00</renda>
-    <limite>R$ 700,00</limite>
+    <renda>R$ 3.500,00</renda>
+    <limite>R$ 1.200,00</limite>
     <cpf>375.788.738-73</cpf>
   </cliente>
 </list>

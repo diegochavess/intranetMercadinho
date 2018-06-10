@@ -14,7 +14,7 @@
 
         <!-- DataTables Responsive CSS -->
         <link href="../../vendor/datatables-responsive/dataTables.responsive.css" rel="stylesheet">
-        
+
         <!-- Bootstrap Core CSS -->
         <link href="../../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
 
@@ -26,7 +26,7 @@
 
         <!-- Custom Fonts -->
         <link href="../../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
-        
+
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
         <!--[if lt IE 9]>
@@ -202,6 +202,16 @@
             <div id="page-wrapper">
                 <div class="row">
                     <div class="col-lg-12">
+                        <%
+                            String status = request.getParameter("status");
+                            if (status != null) {
+                                if (status.equals("OK")) {
+                                    out.println("<h4 style='color:green;float:right'>");
+                                    out.println("Cliente cadastrado com sucesso!");
+                                    out.println("</h4>");
+                                }
+                            }
+                        %>
                         <h1 class="page-header">CLIENTES</h1>
                     </div>
                     <!-- /.col-lg-12 -->
@@ -357,7 +367,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div id="todos" class="tab-pane fade">
+                        <div id="todos" class="tab-pane fade in">
                             <div class="row">
                                 <div class="col-lg-12">
                                     <div class="panel panel-default">
@@ -510,11 +520,11 @@
         <!-- /#wrapper -->
 
         <!-- jQuery -->
-        
-        
+
+
         <!-- Bootstrap Core JavaScript -->
         <script src="../../vendor/bootstrap/js/bootstrap.min.js"></script>
-        
+
         <!-- Metis Menu Plugin JavaScript -->
         <script src="../../vendor/metisMenu/metisMenu.min.js" type="text/javascript"></script>
 
