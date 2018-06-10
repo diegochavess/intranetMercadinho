@@ -9,7 +9,12 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="shortcut icon" href="../../img/favicon.ico" />
         <title>Mercadinho Santa Izabel</title>
+        <!-- DataTables CSS -->
+        <link href="../../vendor/datatables-plugins/dataTables.bootstrap.css" rel="stylesheet">
 
+        <!-- DataTables Responsive CSS -->
+        <link href="../../vendor/datatables-responsive/dataTables.responsive.css" rel="stylesheet">
+        
         <!-- Bootstrap Core CSS -->
         <link href="../../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
 
@@ -21,7 +26,7 @@
 
         <!-- Custom Fonts -->
         <link href="../../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
-
+        
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
         <!--[if lt IE 9]>
@@ -30,7 +35,7 @@
         <![endif]-->
 
         <!-- Validate Form -->
-        <script src="../../dist/js/jquery-3.3.1.min.js" type="text/javascript"></script>
+        <script src="../../vendor/jquery/jquery-3.3.1.min.js" type="text/javascript"></script>
         <script src="../../dist/js/bootstrap.min.js" type="text/javascript"></script>
         <script src="../../dist/js/notify.min.js" type="text/javascript"></script>
         <script src="../../dist/js/jquery.maskMoney.js" type="text/javascript"></script>
@@ -504,6 +509,12 @@
         </div>
         <!-- /#wrapper -->
 
+        <!-- jQuery -->
+        
+        
+        <!-- Bootstrap Core JavaScript -->
+        <script src="../../vendor/bootstrap/js/bootstrap.min.js"></script>
+        
         <!-- Metis Menu Plugin JavaScript -->
         <script src="../../vendor/metisMenu/metisMenu.min.js" type="text/javascript"></script>
 

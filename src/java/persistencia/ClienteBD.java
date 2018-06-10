@@ -8,7 +8,7 @@ import java.util.ArrayList;
 
 public class ClienteBD {
     
-    private static final String caminho = "D:\\FATEC\\2 Semestre\\Linguagem Programação\\IntranetMercadinho\\";
+    private static final String caminho = "D:\\FATEC\\2 Semestre\\PI\\IntranetMercadinho\\";
     
     private static ArrayList<Cliente> lista = new ArrayList<Cliente>();
     //adiciona um objeto da classe Cliente 
