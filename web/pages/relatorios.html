@@ -97,16 +97,16 @@
                                 <a href="relatorios.html"><i class="fa fa-table fa-fw"></i> RELATÓRIOS</a>
                             </li>
                             <li>
-                            <a href="estoque.html"><i class="fa fa-edit fa-fw"></i> ESTOQUE <span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level">
-                                <li>
-                                    <a href="cadastrodeprodutos.html"><i class="fa fa-cubes fa-fw"></i>Cadastro de produtos</a>
-                                </li>
-                                <li>
-                                    <a href="compras.html"><i class="fa fa-shopping-cart fa-fw"></i>Compras</a>
-                                </li>
-                            </ul>
-                        </li>
+                                <a href="estoque.html"><i class="fa fa-edit fa-fw"></i> ESTOQUE <span class="fa arrow"></span></a>
+                                <ul class="nav nav-second-level">
+                                    <li>
+                                        <a href="cadastrodeprodutos.html"><i class="fa fa-cubes fa-fw"></i>Cadastro de produtos</a>
+                                    </li>
+                                    <li>
+                                        <a href="compras.html"><i class="fa fa-shopping-cart fa-fw"></i>Compras</a>
+                                    </li>
+                                </ul>
+                            </li>
                             <li>
                                 <a href="cliente/cadastrarCliente.jsp"><i class="fa fa-users fa-fw"></i> CLIENTES</a>
                             </li>
@@ -125,6 +125,62 @@
                         <h1 class="page-header">RELATÓRIOS</h1>
                     </div>
                     <!-- /.col-lg-12 -->
+                    <div class="col-lg-12">
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@getbootstrap">Arquivos Externos</button>
+                        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h3 class="modal-title" id="exampleModalLabel">PLANILHAS</h3>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        
+                                        <a href="#"><img style="max-height: 50px;max-width: 50px" src="../img/Excel_2013.png" alt="Relatório Mensal - Despesas Mercadinho" />  Relatório Mensal - Despesas Mercadinho</a>
+                                        <div class="dropdown-divider"></div>
+                                        <a href="#"><img style="max-height: 50px;max-width: 50px" src="../img/Excel_2013.png" alt="Relatório Mensal - Despesas Pessoais" />  Relatório Mensal - Despesas Pessoais</a>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                ESTOQUE
+                            </div>
+                            <!-- /.panel-heading -->
+                            <div class="panel-body">
+                                <div class="flot-chart">
+                                    <div class="flot-chart-content" id="flot-estoque"></div>
+                                </div>
+                            </div>
+                            <!-- /.panel-body -->
+                        </div>
+                        <!-- /.panel -->
+                    </div>
+                    <!-- /.col-lg-6 -->
+                    <div class="col-lg-6">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                CLIENTES
+                            </div>
+                            <!-- /.panel-heading -->
+                            <div class="panel-body">
+                                <div class="flot-chart">
+                                    <div class="flot-chart-content" id="flot-clientes"></div>
+                                </div>
+                            </div>
+                            <!-- /.panel-body -->
+                        </div>
+                        <!-- /.panel -->
+                    </div>
+                    <!-- /.col-lg-6 -->
                 </div>
             </div>
             <!-- /#page-wrapper -->
