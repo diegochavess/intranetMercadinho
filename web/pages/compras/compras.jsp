@@ -44,38 +44,7 @@
         <script src="../../dist/js/validation/jquery.validate.min.js" type="text/javascript"></script>
         <script src="../../dist/js/validation/localization/messages_pt_BR.js" type="text/javascript"></script>
         <script src="../../dist/js/validation/cpfBR.js" type="text/javascript"></script>
-        <script type="text/javascript">
-            $(document).ready(function () {
-                $("#datacompra").mask("00/00/0000")
-                $("#vencecompra").mask("00/00/0000")                
-                $("#tipocompra").maskMoney({prefix: 'R$ ', thousands: '.', decimal: ',', affixesStay: true});
-                $("#valorcompra").maskMoney({prefix: 'R$ ', thousands: '.', decimal: ',', affixesStay: true});
-                $("#formCompra").validate({
-                    rules: {
-                        empresa: {
-                            required: true,
-                            minlength: 8,
-                            maxlength: 100
-                        },            
-                        ncompra:{
-                            required: true;                           
-                        },
-                        tipocompra:{
-                            required: true;
-                        },
-                        valorcompra:{
-                            required: true;
-                            
-                        },
-                        datacompra: {
-                            required: true;
-                        },
-                        vencecompra: {
-                            required: true;
-                        }
-                    }
-                })
-            })
+        <script type="text/javascript">            
         </script>
 
     </head>
