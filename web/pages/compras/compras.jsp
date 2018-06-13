@@ -44,7 +44,38 @@
         <script src="../../dist/js/validation/jquery.validate.min.js" type="text/javascript"></script>
         <script src="../../dist/js/validation/localization/messages_pt_BR.js" type="text/javascript"></script>
         <script src="../../dist/js/validation/cpfBR.js" type="text/javascript"></script>
-        <script type="text/javascript">            
+        <script type="text/javascript"> 
+            $(document).ready(function () {
+-                $("#datacompra").mask("00/00/0000")
+-                $("#vencecompra").mask("00/00/0000")                
+-                $("#tipocompra").maskMoney({prefix: 'R$ ', thousands: '.', decimal: ',', affixesStay: true});
+-                $("#valorcompra").maskMoney({prefix: 'R$ ', thousands: '.', decimal: ',', affixesStay: true});
+-                $("#formCompra").validate({
+-                    rules: {
+-                        empresa: {
+-                            required: true,
+-                            minlength: 8,
+-                            maxlength: 100
+-                        },            
+-                        ncompra:{
+-                            required: true;                           
+-                        },
+-                        tipocompra:{
+-                            required: true;
+-                        },
+-                        valorcompra:{
+-                            required: true;
+-                            
+-                        },
+-                        datacompra: {
+-                            required: true;
+-                        },
+-                        vencecompra: {
+-                            required: true;
+-                        }
+-                    }
+-                })
+-            })
         </script>
 
     </head>
@@ -60,7 +91,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="index.html">Página Inicial</a>
+                    <a class="navbar-brand" href="../index.html">Página Inicial</a>
                 </div>
                 <!-- /.navbar-header -->
 
@@ -76,7 +107,7 @@
                             <li><a href="#"><i class="fa fa-gear fa-fw"></i> Configurações</a>
                             </li>
                             <li class="divider"></li>
-                            <li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i> Sair</a>
+                            <li><a href="../login/login.html"><i class="fa fa-sign-out fa-fw"></i> Sair</a>
                             </li>
                         </ul>
                         <!-- /.dropdown-user -->
@@ -100,24 +131,24 @@
                                 <!-- /input-group -->
                             </li>
                             <li>
-                                <a href="fornecedores.html"><i class="fa fa-bar-chart-o fa-fw"></i> FORNECEDORES</a>
+                                <a href="../fornecedores.html"><i class="fa fa-bar-chart-o fa-fw"></i> FORNECEDORES</a>
                             </li>
                             <li>
-                                <a href="relatorios.html"><i class="fa fa-table fa-fw"></i> RELATÓRIOS</a>
+                                <a href="../relatorios.html"><i class="fa fa-table fa-fw"></i> RELATÓRIOS</a>
                             </li>
                             <li>
-                                <a href="estoque.html"><i class="fa fa-edit fa-fw"></i> ESTOQUE <span class="fa arrow"></span></a>
+                                <a href="../estoque.html"><i class="fa fa-edit fa-fw"></i> ESTOQUE <span class="fa arrow"></span></a>
                                 <ul class="nav nav-second-level">
                                     <li>
-                                        <a href="cadastrodeprodutos.html"><i class="fa fa-cubes fa-fw"></i>Cadastro de produtos</a>
+                                        <a href="../cadastrodeprodutos.html"><i class="fa fa-cubes fa-fw"></i>Cadastro de produtos</a>
                                     </li>
                                     <li>
-                                        <a href="compras.jsp"><i class="fa fa-shopping-cart fa-fw"></i>Compras</a>
+                                        <a href="compras/compras.jsp"><i class="fa fa-shopping-cart fa-fw"></i>Compras</a>
                                     </li>
                                 </ul>
                             </li>
                             <li>
-                                <a href="cliente/cadastrarCliente.jsp"><i class="fa fa-users fa-fw"></i> CLIENTES</a>
+                                <a href="../cliente/cadastrarCliente.jsp"><i class="fa fa-users fa-fw"></i> CLIENTES</a>
                             </li>
                         </ul>
                     </div>

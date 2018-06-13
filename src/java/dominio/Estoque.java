@@ -1,6 +1,6 @@
 package dominio;
 
-public class Estoque extends Pessoa{
+public class Estoque{
     private String codigo;
     private String cnpj;
     private String dataCadastro;
