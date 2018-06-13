@@ -29,4 +29,12 @@ public class Login {
     public void setNovaSenha(String novaSenha) {
         this.novaSenha = novaSenha;
     }
+
+    public int getcodigo() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public void setCodigo(int i) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }
