@@ -8,7 +8,7 @@ import java.util.ArrayList;
 
 public class LoginBD {
     private static ArrayList<Login> lista = new ArrayList<Login>();
-    private static String caminho = "F:  \\";
+    private static String caminho = "F: \\PI\\NOVOPROJETO\\intranetMercadinho\\";
     
     public static void inserir(Login novoLogin){
         lerXml();
