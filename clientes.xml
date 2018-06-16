@@ -1,0 +1,98 @@
+<list>
+  <cliente>
+    <codigo>1</codigo>
+    <nome>Diego Pellegrine Chaves</nome>
+    <endereco>Rua Aristides C?zar</endereco>
+    <numero>143</numero>
+    <cidade>Piquete</cidade>
+    <uf>sp</uf>
+    <telefone>(12)3156-5034</telefone>
+    <celular>(12)99232-2185</celular>
+    <email>dgochva@outlook.com</email>
+    <sexo>masculino</sexo>
+    <profissao>Administrador de Redes</profissao>
+    <renda>R$ 2.500,00</renda>
+    <limite>R$ 800,00</limite>
+    <cpf>375.788.738-73</cpf>
+  </cliente>
+  <cliente>
+    <codigo>2</codigo>
+    <nome>Brenda Pereira</nome>
+    <endereco>Rua da Brenda</endereco>
+    <numero>25</numero>
+    <cidade>Lorena</cidade>
+    <uf>sp</uf>
+    <telefone>(12)2222-2222</telefone>
+    <celular>(33)33333-3333</celular>
+    <email>brenda@brenda.com.br</email>
+    <sexo>feminino</sexo>
+    <profissao>Administrador de Redes</profissao>
+    <renda>R$ 2.000,00</renda>
+    <limite>R$ 800,00</limite>
+    <cpf>375.788.738-73</cpf>
+  </cliente>
+  <cliente>
+    <codigo>3</codigo>
+    <nome>Felipe de Castro Palheta</nome>
+    <endereco>Rua do Felipe</endereco>
+    <numero>78</numero>
+    <cidade>Aparecida</cidade>
+    <uf>sp</uf>
+    <telefone>(12)3156-5034</telefone>
+    <celular>(33)33333-3333</celular>
+    <email>felipe@palheta.com.br</email>
+    <sexo>masculino</sexo>
+    <profissao>Administrador de Redes</profissao>
+    <renda>R$ 1.600,00</renda>
+    <limite>R$ 900,00</limite>
+    <cpf>375.788.738-73</cpf>
+  </cliente>
+  <cliente>
+    <codigo>4</codigo>
+    <nome>Otac?lio Cesar Silva</nome>
+    <endereco>Rua Manoel Gomes</endereco>
+    <numero>280</numero>
+    <cidade>Guaratinguet?</cidade>
+    <uf>sp</uf>
+    <telefone>(12)3156-5034</telefone>
+    <celular>(33)33333-3333</celular>
+    <email>ota@cilio.com</email>
+    <sexo>masculino</sexo>
+    <profissao>Administrador de Redes</profissao>
+    <renda>R$ 2.000,00</renda>
+    <limite>R$ 1.000,00</limite>
+    <cpf>375.788.738-73</cpf>
+  </cliente>
+  <cliente>
+    <codigo>5</codigo>
+    <nome>Krystian Marlon</nome>
+    <endereco>Rua do Vaqueiro</endereco>
+    <numero>5</numero>
+    <cidade>Cunha</cidade>
+    <uf>sp</uf>
+    <telefone>(12)2222-2222</telefone>
+    <celular>(33)33333-3333</celular>
+    <email>ky@cunha.com</email>
+    <sexo>masculino</sexo>
+    <profissao>Administrador de Redes</profissao>
+    <renda>R$ 3.000,00</renda>
+    <limite>R$ 1.000,00</limite>
+    <cpf>375.788.738-73</cpf>
+  </cliente>
+  <cliente>
+    <codigo>6</codigo>
+    <nome>Renan Willian Caetano</nome>
+    <endereco>Rua Caetano</endereco>
+    <numero>99</numero>
+    <cidade>Aparecida</cidade>
+    <uf>sp</uf>
+    <telefone>(12)3156-5034</telefone>
+    <celular>(33)33333-3333</celular>
+    <email>renan@wil.com</email>
+    <sexo>masculino</sexo>
+    <profissao>Administrador de Redes</profissao>
+    <renda>R$ 2.600,00</renda>
+    <limite>R$ 800,00</limite>
+    <cpf>375.788.738-73</cpf>
+  </cliente>
+</list>

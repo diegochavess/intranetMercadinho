@@ -34,7 +34,7 @@ public class EstoqueBD {
         XStream xstream = new XStream();
         xstream.alias("estoque",Estoque.class);
         try{
-            FileWriter escritor=new FileWriter(caminho + "estoques.xml");
+            FileWriter escritor=new FileWriter(caminho + "estoque.xml");
             escritor.write( xstream.toXML(lista) );
             escritor.close();
         }catch(Exception ex){

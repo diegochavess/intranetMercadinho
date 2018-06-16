@@ -1,6 +1,7 @@
 package dominio;
 
 public class Pessoa {
+    private int codigo;
     private String nome;
     private String endereco;
     private String numero;
@@ -10,6 +11,13 @@ public class Pessoa {
     private String celular;
     private String email;
     private String senha;
+
+    public int getCodigo() {
+        return codigo;
+    }
+    public void setCodigo(int codigo) {
+        this.codigo = codigo;
+    }
     
     public void setNome(String novoNome){
         nome = novoNome;
