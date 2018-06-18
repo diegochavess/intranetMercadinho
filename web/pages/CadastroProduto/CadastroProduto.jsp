@@ -1,3 +1,7 @@
+<%@page import="persistencia.CadastroProdutoBD"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="dominio.CadastroProduto"%>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -82,7 +86,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="index.html">Página Inicial</a>
+                    <a class="navbar-brand" href="index.html">PÃ¡gina Inicial</a>
                 </div>
                 <!-- /.navbar-header -->
 
@@ -95,7 +99,7 @@
                         <ul class="dropdown-menu dropdown-user">
                             <li><a href="#"><i class="fa fa-user fa-fw"></i> Perfil</a>
                             </li>
-                            <li><a href="#"><i class="fa fa-gear fa-fw"></i> Configurações</a>
+                            <li><a href="#"><i class="fa fa-gear fa-fw"></i> ConfiguraÃ§Ãµes</a>
                             </li>
                             <li class="divider"></li>
                             <li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i> Sair</a>
@@ -125,7 +129,7 @@
                                 <a href="fornecedores.html"><i class="fa fa-bar-chart-o fa-fw"></i> FORNECEDORES</a>
                             </li>
                             <li>
-                                <a href="relatorios.html"><i class="fa fa-table fa-fw"></i> RELATÓRIOS</a>
+                                <a href="relatorios.html"><i class="fa fa-table fa-fw"></i> RELATÃ“RIOS</a>
                             </li>
                             <li>
                                 <a href="estoque.html"><i class="fa fa-edit fa-fw"></i> ESTOQUE <span class="fa arrow"></span></a>
@@ -149,7 +153,7 @@
             </nav>
             <!-- CORPO 
                     DA
-                PÁGINA -->
+                PÃGINA -->
             <div id="page-wrapper">
                 <div class="row">
                     <div class="col-lg-12">
@@ -167,7 +171,7 @@
 
                             <!-- Text input-->
                             <div>
-                                <label class="col-md-4 control-label">Cód. Produto : </label>  
+                                <label class="col-md-4 control-label">CÃ³d. Produto : </label>  
                                 <div class="col-md-2">
                                     <input name="codigoProduto" id="codigoProduto" type="number" placeholder="" class="form-control " required="">
 
@@ -178,7 +182,7 @@
                             <div>
                                 <label class="col-md-4 control-label">Produto : </label>  
                                 <div class="col-md-6">
-                                    <input  name="produto" id="produto" type="text" placeholder="Descrição do Produto" class="form-control" required="">
+                                    <input  name="produto" id="produto" type="text" placeholder="DescriÃ§Ã£o do Produto" class="form-control" required="">
 
                                 </div>
                             </div>
@@ -188,10 +192,10 @@
                                 <label class="col-md-4 control-label">Grupo : </label>
                                 <div class="col-md-4">
                                     <select  name="grupo" id="grupo" class="form-control">
-                                        <option value="1">Higiêne</option>
+                                        <option value="1">HigiÃªne</option>
                                         <option value="2">Consumo</option>
                                         <option value="3">Limpesa</option>
-                                        <option value="4">Material de Escritório</option>
+                                        <option value="4">Material de EscritÃ³rio</option>
                                     </select>
                                 </div>
                             </div>
@@ -210,15 +214,15 @@
                                 </div>
                             </div>
                             <div>
-                                <label class="col-md-4 control-label">Preço : </label>  
+                                <label class="col-md-4 control-label">PreÃ§o : </label>  
                                 <div class="col-md-6">
-                                    <input  name="preco" id="preco" type="text" placeholder="Preço do Produto" class="form-control" required="">
+                                    <input  name="preco" id="preco" type="text" placeholder="PreÃ§o do Produto" class="form-control" required="">
 
                                 </div>
                             </div>
                             <!-- Text input-->
                             <div>
-                                <label class="col-md-4 control-label">Estoque Mínimo : </label>  
+                                <label class="col-md-4 control-label">Estoque MÃ­nimo : </label>  
                                 <div class="col-md-2">
                                     <input  name="estoqueMinimo" id="estoqueMinimo" type="text" placeholder="" class="form-control" required="">
 
