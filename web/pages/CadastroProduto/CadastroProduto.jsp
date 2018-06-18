@@ -10,24 +10,34 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="description" content="">
-        <meta name="author" content="">
-        <link rel="shortcut icon" href="../img/favicon.ico" />
-
+        <link rel="shortcut icon" href="../../img/favicon.ico" />
         <title>Mercadinho Santa Izabel</title>
+        <!-- DataTables CSS -->
+        <link href="../../vendor/datatables-plugins/dataTables.bootstrap.css" rel="stylesheet">
+
+        <!-- DataTables Responsive CSS -->
+        <link href="../../vendor/datatables-responsive/dataTables.responsive.css" rel="stylesheet">
 
         <!-- Bootstrap Core CSS -->
-        <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
 
         <!-- MetisMenu CSS -->
-        <link href="../vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
+        <link href="../../vendor/metisMenu/metisMenu.min.css" rel="stylesheet" type="text/css"/>
 
         <!-- Custom CSS -->
-        <link href="../dist/css/sb-admin-2.css" rel="stylesheet">
+        <link href="../../dist/css/sb-admin-2.css" rel="stylesheet" type="text/css"/>
 
         <!-- Custom Fonts -->
-        <link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href="../../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
 
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+        <!-- Validate Form -->
         <script src="../../vendor/jquery/jquery-3.3.1.min.js" type="text/javascript"></script>
         <script src="../../dist/js/bootstrap.min.js" type="text/javascript"></script>
         <script src="../../dist/js/notify.min.js" type="text/javascript"></script>
@@ -36,41 +46,56 @@
         <script src="../../dist/js/validation/jquery.validate.min.js" type="text/javascript"></script>
         <script src="../../dist/js/validation/localization/messages_pt_BR.js" type="text/javascript"></script>
         <script src="../../dist/js/validation/cpfBR.js" type="text/javascript"></script>
+        <script type="text/javascript">
+            $(document).ready(function () {
 
-        <script 
-            type="text/javascript">
-                $(document).ready(function () {
+                $("#txtpreco").maskMoney({prefix: 'R$ ', thousands: '.', decimal: ',', affixesStay: true});
 
-                    $("#preco").maskMoney({prefix: 'R$ ', thousands: '.', decimal: ',', affixesStay: true});
+                $("#formProduto").validate({
+                    rules: {
+                        txtcodigo_produto_id: {
+                            required: true,
 
-                    $("#form-grupo").validate({
-                        rules: {
-                            codigoProduto: {
-                                required: true,
-                                minlength: 8
+                            maxlength: 12
+                        },
 
-                            },
-                            Produto: {
-                                required: true
-                            },
-                            grupo: {
-                                required: true
-                            },
-                            unidade: {
-                                required: true
-                            },
+                        txtproduto: {
+                            required: true
+                        },
+                        txtgrupo: {
+                            required: true
+                        },
+                       txtcodigo_unidade_id: {
+                            required: true
+                        },
+                        txtpreco: {
+                            required: true,
+                            
+                        },
+                        txtestoque_minimo: {
+                            required: true
+                        },
+                        txtestoque_atual: {
+                            required: true
+                        },
 
-                            estoqueMinimo: {
-                                required: true
-                            },
-                            estoqueAtual: {
-                                required: true
-                            },
-
-                        }
-                    })
+                    }
                 })
+            })
+
+
         </script>
+        <style type="text/css">
+            label.error{
+                color: red;
+            }
+            input.error{
+                border: 1px solid red;
+            }
+            .error{
+                font-size: 12px;
+            }
+        </style>
     </head>
 
     <body>
@@ -86,7 +111,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="index.html">Página Inicial</a>
+                    <a class="navbar-brand" href="../index.html">Página Inicial</a>
                 </div>
                 <!-- /.navbar-header -->
 
@@ -102,7 +127,7 @@
                             <li><a href="#"><i class="fa fa-gear fa-fw"></i> Configurações</a>
                             </li>
                             <li class="divider"></li>
-                            <li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i> Sair</a>
+                            <li><a href="../login/login.jsp"><i class="fa fa-sign-out fa-fw"></i> Sair</a>
                             </li>
                         </ul>
                         <!-- /.dropdown-user -->
@@ -126,19 +151,19 @@
                                 <!-- /input-group -->
                             </li>
                             <li>
-                                <a href="fornecedores.html"><i class="fa fa-bar-chart-o fa-fw"></i> FORNECEDORES</a>
+                                <a href="../fornecedores.html"><i class="fa fa-bar-chart-o fa-fw"></i> FORNECEDORES</a>
                             </li>
                             <li>
-                                <a href="relatorios.html"><i class="fa fa-table fa-fw"></i> RELATÓRIOS</a>
+                                <a href="../relatorios.html"><i class="fa fa-table fa-fw"></i> RELATÓRIOS</a>
                             </li>
                             <li>
-                                <a href="estoque.html"><i class="fa fa-edit fa-fw"></i> ESTOQUE <span class="fa arrow"></span></a>
+                                <a href="../estoque.html"><i class="fa fa-edit fa-fw"></i> ESTOQUE <span class="fa arrow"></span></a>
                                 <ul class="nav nav-second-level">
                                     <li>
-                                        <a href="cadastrodeprodutos.html"><i class="fa fa-cubes fa-fw"></i>Cadastro de produtos</a>
+                                        <a href="../cadastrodeprodutos.html"><i class="fa fa-cubes fa-fw"></i>Cadastro de produtos</a>
                                     </li>
                                     <li>
-                                        <a href="compras.html"><i class="fa fa-shopping-cart fa-fw"></i>Compras</a>
+                                        <a href="../compras/compras.jsp"><i class="fa fa-shopping-cart fa-fw"></i>Compras</a>
                                     </li>
                                 </ul>
                             </li>
@@ -163,35 +188,38 @@
                 </div>
                 <!-- /.row -->
                 <div class="row">
-                    <form name="form-grupo" id="form-grupo">
+                    <form name="formProduto" id="formProduto" method="post" action="incluir.jsp">
                         <fieldset>
 
                             <!-- Form Name -->
                             <legend>Cadastro de Produtos</legend>
 
                             <!-- Text input-->
-                            <div>
-                                <label class="col-md-4 control-label">Cód. Produto : </label>  
+                            <div class="form-group">
+                                <label class="col-md-4 control-label" for="txtcodigo_produto_id">Cód. Produto : </label>  
                                 <div class="col-md-2">
-                                    <input name="codigoProduto" id="codigoProduto" type="number" placeholder="" class="form-control " required="">
+                                    <input id="txtcodigo_produto_id" name="txtcodigo_produto_id" type="text" placeholder="" class="form-control input-md">
 
                                 </div>
                             </div>
+                            <br/><br/><br/>
 
                             <!-- Text input-->
-                            <div>
-                                <label class="col-md-4 control-label">Produto : </label>  
+                            <div class="form-group">
+                                <label class="col-md-4 control-label" for="txtproduto">Produto : </label>  
                                 <div class="col-md-6">
-                                    <input  name="produto" id="produto" type="text" placeholder="Descrição do Produto" class="form-control" required="">
+                                    <input id="txtproduto" name="txtproduto" type="text" placeholder="Descrição do Produto" class="form-control input-md" required="">
 
                                 </div>
                             </div>
+                            <br/><br/>
 
                             <!-- Select Basic -->
-                            <div>
-                                <label class="col-md-4 control-label">Grupo : </label>
+                            <div class="form-group">
+                                <label class="col-md-4 control-label" for="txtgrupo">Grupo : </label>
                                 <div class="col-md-4">
-                                    <select  name="grupo" id="grupo" class="form-control">
+                                    <select id="txtgrupo" name="txtgrupo" class="form-control">
+                                        <option value=""selected="selected">Selecione</option>
                                         <option value="1">Higiêne</option>
                                         <option value="2">Consumo</option>
                                         <option value="3">Limpesa</option>
@@ -199,12 +227,14 @@
                                     </select>
                                 </div>
                             </div>
+                            <br/><br/><br/>
 
                             <!-- Select Basic -->
-                            <div>
-                                <label class="col-md-4 control-label">Unidade : </label>
-                                <div class="col-md-4">
-                                    <select  name="unidade" id="unidade" class="form-control">
+                            <div class="form-group">
+                                <label class="col-md-4 control-label" for="txtcodigo_unidade_id">Unidade : </label>
+                                <div class="col-md-6">
+                                    <select id="txtcodigo_unidade_id" name="txtcodigo_unidade_id" class="form-control">
+                                         <option value=""selected="selected">Selecione</option>
                                         <option value="UND">Unidade</option>
                                         <option value="CX">Caixa</option>
                                         <option value="PC">Pacote</option>
@@ -213,33 +243,35 @@
                                     </select>
                                 </div>
                             </div>
-                            <div>
-                                <label class="col-md-4 control-label">Preço : </label>  
+                            <br/><br/><br/>
+                            <div class="form-group">
+                                <label class="col-md-4 control-label" for="txtpreco">Preço : </label>  
                                 <div class="col-md-6">
-                                    <input  name="preco" id="preco" type="text" placeholder="Preço do Produto" class="form-control" required="">
+                                    <input id="txtpreco" name="txtpreco" type="text" placeholder="Preço do Produto" class="form-control input-md" required="">
 
                                 </div>
                             </div>
+                            <br/><br/><br/>
                             <!-- Text input-->
-                            <div>
-                                <label class="col-md-4 control-label">Estoque Mínimo : </label>  
-                                <div class="col-md-2">
-                                    <input  name="estoqueMinimo" id="estoqueMinimo" type="text" placeholder="" class="form-control" required="">
+                            <div class="form-group">
+                                <label class="col-md-4 control-label" for="txtestoque_minimo">Estoque Mínimo : </label>  
+                                <div class="col-md-6">
+                                    <input id="txtestoque_minimo" name="txtestoque_minimo" type="text" placeholder="" class="form-control input-md" required="">
 
                                 </div>
                             </div>
-
+                            <br/><br/>
                             <!-- Text input-->
-                            <div>
-                                <label class="col-md-4 control-label">Estoque Atual : </label>  
-                                <div class="col-md-2">
-                                    <input id="estoqueatual" name="estoqueatual" type="text" placeholder="" class="form-control input-md" required="">
+                            <div class="form-group">
+                                <label class="col-md-4 control-label" for="txtestoque_atual">Estoque Atual : </label>  
+                                <div class="col-md-6">
+                                    <input id="txtestoque_atual" name="txtestoque_atual" type="text" placeholder="" class="form-control input-md">
 
                                 </div>
                             </div>
-
+                            <br/><br/><br/><br/>
                             <!-- Button (Double) -->
-                            <div>
+                            <div class="form-group">
                                 <label class="col-md-4 control-label" for="btnsalvar"></label>
                                 <div class="col-md-8">
                                     <button id="btnsalvar" name="btnsalvar" class="btn btn-primary">Salvar</button>
@@ -259,7 +291,17 @@
         </div>
         <!-- /#wrapper -->
 
+        <!-- jQuery -->
+        <script src="../vendor/jquery/jquery.min.js"></script>
 
+        <!-- Bootstrap Core JavaScript -->
+        <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
+
+        <!-- Metis Menu Plugin JavaScript -->
+        <script src="../vendor/metisMenu/metisMenu.min.js"></script>
+
+        <!-- Custom Theme JavaScript -->
+        <script src="../dist/js/sb-admin-2.js"></script>
 
     </body>
 
