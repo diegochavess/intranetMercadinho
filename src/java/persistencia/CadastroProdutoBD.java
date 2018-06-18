@@ -8,7 +8,7 @@ import java.util.ArrayList;
 
 public class CadastroProdutoBD {
 
-    private static final String caminho = "C:\\Users\\felip\\Desktop\\intranetMercadinho-master (4)\\";
+    private static final String caminho = "C:\\Users\\felip\\Desktop\\novo projeto\\intranetMercadinho\\";
     private static ArrayList<CadastroProduto> lista = new ArrayList<CadastroProduto>();
 
     public static void inserir(CadastroProduto novoCadastroProduto) {
@@ -38,7 +38,7 @@ public class CadastroProdutoBD {
            
     }
  private static void lerXml(){
-        File arquivo=new File(caminho + "Estoque.xml");
+        File arquivo=new File(caminho + "CadastroProduto.xml");
         if (arquivo.exists()){
             //armazenar XML no vetor
             XStream xstream=new XStream();
@@ -53,7 +53,7 @@ public class CadastroProdutoBD {
         XStream xstream = new XStream();
         xstream.alias("estoque",CadastroProduto.class);
         try{
-            FileWriter escritor=new FileWriter(caminho + "estoque.xml");
+            FileWriter escritor=new FileWriter(caminho + "CadastroProduto.xml");
             escritor.write( xstream.toXML(lista) );
             escritor.close();
         }catch(Exception ex){
