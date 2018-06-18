@@ -1,5 +1,5 @@
-<%@page import="persistencia.EstoqueBD"%>
-<%@page import="dominio. Estoque"%>
+<%@page import="persistencia.CadastroProdutoBD"%>
+<%@page import="dominio. CadastroProduto"%>
 <%
     String codigoProduto = request.getParameter("codigoProduto");
     String produto = request.getParameter("produto");
@@ -10,15 +10,15 @@
     String estoqueAtual = request.getParameter("estoqueAtual");
     
     
-    Estoque estoque = new Estoque();
-    estoque.setCodigoProduto(Integer.parseInt(codigoProduto));
-    estoque.setProduto(produto);
-    estoque.setGrupo(grupo);
-    estoque.setUnidade(unidade);
-    estoque.setPreco(Double.parseDouble(preco));
-    estoque.setEstoqueMinimo(Integer.parseInt(estoqueMinimo));
-    estoque.setEstoqueAtual(Integer.parseInt(estoqueAtual));
+    CadastroProduto cadastroProduto = new CadastroProduto();
+    cadastroProduto.setCodigoProduto(Integer.parseInt(codigoProduto));
+    cadastroProduto.setProduto(produto);
+    cadastroProduto.setGrupo(grupo);
+    cadastroProduto.setUnidade(unidade);
+    cadastroProduto.setPreco(Double.parseDouble(preco));
+    cadastroProduto.setEstoqueMinimo(Integer.parseInt(estoqueMinimo));
+    cadastroProduto.setEstoqueAtual(Integer.parseInt(estoqueAtual));
     
-    EstoqueBD.inserir(estoque);
+    CadastroProdutoBD.inserir(cadastroProduto);
     response.sendRedirect("CadastroProduto.jsp?status=OK");
 %>
