@@ -4,8 +4,8 @@ public class Cliente extends Pessoa{
     private String sexo;
     private String estadoCivil;
     private String profissao;
-    private String renda;
-    private String limite;
+    private double renda;
+    private double limite;
     private String cpf;
 
     public void setSexo(String sexo) {
@@ -29,17 +29,17 @@ public class Cliente extends Pessoa{
         return profissao;
     }
 
-    public void setRenda(String novoRenda) {
+    public void setRenda(double novoRenda) {
         this.renda = novoRenda;
     }
-    public String getRenda() {
+    public double getRenda() {
         return renda;
     }
 
-    public void setLimite(String limite) {
+    public void setLimite(double limite) {
         this.limite = limite;
     }
-    public String getLimite() {
+    public double getLimite() {
         return limite;
     }
 

@@ -16,6 +16,19 @@
     String limite = request.getParameter("limite");
     String cpf = request.getParameter("cpf");
     
+    System.out.println("renda");
+    System.out.println(renda);
+    
+    renda = renda.replace(".", "");
+    renda = renda.replace(" ","");
+    renda = renda.replace("R$","");
+    renda = renda.replace(",",".");
+    
+    limite = limite.replace(".", "");
+    limite = limite.replace(" ", "");
+    limite = limite.replace("R$", "");
+    limite = limite.replace(",", ".");
+    
     Cliente cliente = new Cliente();
     cliente.setNome(nome);
     cliente.setEndereco(endereco);
@@ -28,8 +41,8 @@
     cliente.setSexo(sexo);
     cliente.setEstadoCivil(estadoCivil);
     cliente.setProfissao(profissao);
-    cliente.setRenda(renda);
-    cliente.setLimite(limite);
+    cliente.setRenda(Double.parseDouble(renda));
+    cliente.setLimite(Double.parseDouble(limite));
     cliente.setCpf(cpf);
     
     // A classe de persistência ClienteBD insere
