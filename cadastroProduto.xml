@@ -1,0 +1,47 @@
+<list>
+  <cadastroProduto>
+    <codigoProduto>1</codigoProduto>
+    <produto>papel higienico</produto>
+    <grupo>1</grupo>
+    <unidade>FAR</unidade>
+    <preco>10.0</preco>
+    <estoqueMinimo>12</estoqueMinimo>
+    <estoqueAtual>15</estoqueAtual>
+  </cadastroProduto>
+  <cadastroProduto>
+    <codigoProduto>2</codigoProduto>
+    <produto>lapi</produto>
+    <grupo>1</grupo>
+    <unidade>UND</unidade>
+    <preco>100.0</preco>
+    <estoqueMinimo>10</estoqueMinimo>
+    <estoqueAtual>10</estoqueAtual>
+  </cadastroProduto>
+  <cadastroProduto>
+    <codigoProduto>3</codigoProduto>
+    <produto>PAPEL</produto>
+    <grupo>1</grupo>
+    <unidade>UND</unidade>
+    <preco>10.0</preco>
+    <estoqueMinimo>100</estoqueMinimo>
+    <estoqueAtual>100</estoqueAtual>
+  </cadastroProduto>
+  <cadastroProduto>
+    <codigoProduto>4</codigoProduto>
+    <produto>Papel higienico</produto>
+    <grupo>1</grupo>
+    <unidade>FAR</unidade>
+    <preco>345.0</preco>
+    <estoqueMinimo>200</estoqueMinimo>
+    <estoqueAtual>1000</estoqueAtual>
+  </cadastroProduto>
+  <cadastroProduto>
+    <codigoProduto>5</codigoProduto>
+    <produto>lapiseira</produto>
+    <grupo>4</grupo>
+    <unidade>UND</unidade>
+    <preco>1.0</preco>
+    <estoqueMinimo>10</estoqueMinimo>
+    <estoqueAtual>1000</estoqueAtual>
+  </cadastroProduto>
+</list>

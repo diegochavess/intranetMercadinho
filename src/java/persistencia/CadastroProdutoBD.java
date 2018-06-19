@@ -8,7 +8,7 @@ import java.util.ArrayList;
 
 public class CadastroProdutoBD {
 
-    private static final String caminho = "G:\\novo projeto\\intranetMercadinho\\";
+    private static final String caminho = "I:\\novo projeto\\intranetMercadinho\\";
    
     private static ArrayList<CadastroProduto> lista = new ArrayList<CadastroProduto>();
     
@@ -51,14 +51,14 @@ public class CadastroProdutoBD {
         return lista;
     }
     
-    public static CadastroProduto getCodigoProduto(int cogigoProduto){
+    public static CadastroProduto getCodigoProduto(int codigoProduto){
         lerXml();
         CadastroProduto cadastroProdutoEncontrado = null;
         for(int i=0; i < lista.size(); i++){
             CadastroProduto cadaCadastroProduto = lista.get(i);
             
             
-            if (cadaCadastroProduto.getCodigoProduto()== (cogigoProduto)){
+            if (cadaCadastroProduto.getCodigoProduto()== (codigoProduto)){
                 cadastroProdutoEncontrado= cadaCadastroProduto;
                 break;
             }

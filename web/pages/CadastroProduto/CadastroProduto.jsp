@@ -179,6 +179,16 @@
             <!-- CORPO 
                     DA
                 PÁGINA -->
+             <%
+                String status = request.getParameter("status");
+                if (status != null) {
+                    if (status.equals("OK")) {
+                        out.println("<h4 style='color:green;float:right'>");
+                        out.println("Produto cadastrado com sucesso!");
+                        out.println("</h4>");
+                    }
+                }
+            %>
             <div id="page-wrapper">
                 <div class="row">
                     <div class="col-lg-12">
