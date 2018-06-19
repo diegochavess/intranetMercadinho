@@ -53,29 +53,29 @@
 
                 $("#formProduto").validate({
                     rules: {
-                        txtcodigo_produto_id: {
+                        codigoProduto: {
                             required: true,
 
                             maxlength: 12
                         },
 
-                        txtproduto: {
+                        produto: {
                             required: true
                         },
-                        txtgrupo: {
+                        grupo: {
                             required: true
                         },
-                       txtcodigo_unidade_id: {
+                       unidade: {
                             required: true
                         },
-                        txtpreco: {
+                        preco: {
                             required: true,
                             
                         },
-                        txtestoque_minimo: {
+                        estoqueMinimo: {
                             required: true
                         },
-                        txtestoque_atual: {
+                        estoqueAtual: {
                             required: true
                         },
 
@@ -198,7 +198,7 @@
                             <div class="form-group">
                                 <label class="col-md-4 control-label" for="txtcodigo_produto_id">Cód. Produto : </label>  
                                 <div class="col-md-2">
-                                    <input id="txtcodigo_produto_id" name="txtcodigo_produto_id" type="text" placeholder="" class="form-control input-md">
+                                    <input id="txtcodigo_produto_id" name="codigoProduto" type="text" placeholder="" class="form-control input-md">
 
                                 </div>
                             </div>
@@ -208,7 +208,7 @@
                             <div class="form-group">
                                 <label class="col-md-4 control-label" for="txtproduto">Produto : </label>  
                                 <div class="col-md-6">
-                                    <input id="txtproduto" name="txtproduto" type="text" placeholder="Descrição do Produto" class="form-control input-md" required="">
+                                    <input id="txtproduto" name="produto" type="text" placeholder="Descrição do Produto" class="form-control input-md" required="">
 
                                 </div>
                             </div>
@@ -218,7 +218,7 @@
                             <div class="form-group">
                                 <label class="col-md-4 control-label" for="txtgrupo">Grupo : </label>
                                 <div class="col-md-4">
-                                    <select id="txtgrupo" name="txtgrupo" class="form-control">
+                                    <select id="txtgrupo" name="grupo" class="form-control">
                                         <option value=""selected="selected">Selecione</option>
                                         <option value="1">Higiêne</option>
                                         <option value="2">Consumo</option>
@@ -233,7 +233,7 @@
                             <div class="form-group">
                                 <label class="col-md-4 control-label" for="txtcodigo_unidade_id">Unidade : </label>
                                 <div class="col-md-6">
-                                    <select id="txtcodigo_unidade_id" name="txtcodigo_unidade_id" class="form-control">
+                                    <select id="txtcodigo_unidade_id" name="unidade" class="form-control">
                                          <option value=""selected="selected">Selecione</option>
                                         <option value="UND">Unidade</option>
                                         <option value="CX">Caixa</option>
@@ -247,7 +247,7 @@
                             <div class="form-group">
                                 <label class="col-md-4 control-label" for="txtpreco">Preço : </label>  
                                 <div class="col-md-6">
-                                    <input id="txtpreco" name="txtpreco" type="text" placeholder="Preço do Produto" class="form-control input-md" required="">
+                                    <input id="txtpreco" name="preco" type="text" placeholder="Preço do Produto" class="form-control input-md" required="">
 
                                 </div>
                             </div>
@@ -256,7 +256,7 @@
                             <div class="form-group">
                                 <label class="col-md-4 control-label" for="txtestoque_minimo">Estoque Mínimo : </label>  
                                 <div class="col-md-6">
-                                    <input id="txtestoque_minimo" name="txtestoque_minimo" type="text" placeholder="" class="form-control input-md" required="">
+                                    <input id="txtestoque_minimo" name="estoqueMinimo" type="text" placeholder="" class="form-control input-md" required="">
 
                                 </div>
                             </div>
@@ -265,7 +265,7 @@
                             <div class="form-group">
                                 <label class="col-md-4 control-label" for="txtestoque_atual">Estoque Atual : </label>  
                                 <div class="col-md-6">
-                                    <input id="txtestoque_atual" name="txtestoque_atual" type="text" placeholder="" class="form-control input-md">
+                                    <input id="txtestoque_atual" name="estoqueAtual" type="text" placeholder="" class="form-control input-md">
 
                                 </div>
                             </div>

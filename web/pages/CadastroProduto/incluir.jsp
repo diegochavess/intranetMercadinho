@@ -9,6 +9,10 @@
     String estoqueMinimo = request.getParameter("estoqueMinimo");
     String estoqueAtual = request.getParameter("estoqueAtual");
     
+    preco = preco.replace(".", "");
+    preco = preco.replace("R$", "");
+    preco = preco.replace(" ", "");
+    preco = preco.replace(",", ".");
     
     CadastroProduto cadastroProduto = new CadastroProduto();
     cadastroProduto.setCodigoProduto(Integer.parseInt(codigoProduto));
