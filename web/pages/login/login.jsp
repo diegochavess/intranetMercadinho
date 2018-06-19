@@ -1,4 +1,13 @@
+<%@page import="dominio.Login"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%
+    Login LoginLogado = null;
+    if(session.getAttribute("Login") != null){
+       LoginLogado = (Login) session.getAttribute("Login");
+    }else{
+        response.sendRedirect("../login.jsp");
+    }
+%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -32,7 +41,7 @@
             $(document).ready(function(){
                 $("#loginForm").validate({
                     rules: {
-                        email: {
+                        Login: {
                             required: true
                         },
                         senha: {
@@ -46,7 +55,16 @@
 </head>
 
 <body>
-
+    <%
+        String erro = request.getParameter("erro");
+        if(erro != null){
+        if (erro.equals("USUARIO_NAO_EXISTE")){
+    %>
+    Esse usuário não existe
+<%
+    }
+}
+%>
     <div class="container">
         <div class="row">
             <div class="col-md-4 col-md-offset-4">
@@ -55,10 +73,10 @@
                         <h3 class="panel-title">Mercadinho Santa Izabel</h3>
                     </div>
                     <div class="panel-body">
-                        <form id="loginForm">
+                        <form id="loginForm" method="post" action="index.jsp">
                             <fieldset>
                                 <div class="form-group">
-                                    <input class="form-control" placeholder="E-mail" name="email" type="email" autofocus>
+                                    <input class="form-control" placeholder="E-mail" name="Login" type="email" autofocus>
                                 </div>
                                 <div class="form-group">
                                     <input class="form-control" placeholder="Senha" name="Senha" type="password" value="">
@@ -69,7 +87,7 @@
                                     </label>
                                 </div>
                                 <!-- Change this to a button or input when using this as a form -->
-                                <input type=""  name="Entre" value="Entre" class="btn btn-primary" <a href="../../index.jsp"/>
+                                <input type="submit"  name="Entre" value="Entre" class="btn btn-primary" />
                              <!---<a href="../../index.jsp" class="btn btn-lg btn-success btn-block">Entre</a>-->
                             </fieldset>
                         </form>
