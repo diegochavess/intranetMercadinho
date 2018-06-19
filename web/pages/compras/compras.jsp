@@ -1,3 +1,6 @@
+<%@page import="persistencia.EstoqueBD"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="dominio.Estoque"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
@@ -41,21 +44,23 @@
         <script src="../../dist/js/jquery.mask.min.js" type="text/javascript"></script>
         <script src="../../dist/js/validation/jquery.validate.min.js" type="text/javascript"></script>
         <script src="../../dist/js/validation/localization/messages_pt_BR.js" type="text/javascript"></script>
-        <script src="../../dist/js/validation/cpfBR.js" type="text/javascript"></script>
-        <script type="text/javascript">
-            $(document).ready(function () {
-                $("#datacompra").mask("00/00/0000")
-                $("#vencecompra").mask("00/00/0000")
-                $("#tipocompra").maskMoney({prefix: 'R$ ', thousands: '.', decimal: ',', affixesStay: true});
-                $("#valorcompra").maskMoney({prefix: 'R$ ', thousands: '.', decimal: ',', affixesStay: true});
-                $("#formCompra").validate({
-                    rules: {
-                        empresa: true,
+        <script src="../../dist/js/validation/cpfBR.js" type="text/javascript"></script>        
+    
+<script type="text/javascript"> 
+    jQuery.noConflict();
+    jQuery(function($){
+       $("#datacompra").mask("99/99/9999");
+       $("#vencecompra").mask("99/99/9999");
+       $("#valorcompra").maskMoney({prefix: 'R$ ', thousands: '.', decimal: ',', affixesStay: true});       
+       $("#formCompra").validate({
+                    rules:{ empresa: {
+                        required: true,
                         minlength: 8,
                         maxlength: 100
                     },
                     ncompra: {
-                        required: true
+                        required: true,
+                            number: true
                     },
                     tipocompra: {
                         required: true
@@ -69,9 +74,11 @@
                     vencecompra: {
                         required: true
                     }
-                })
-        })
-        </script>
+                }
+                });
+    }); 
+</script>
+       
 
     </head>
 
@@ -164,10 +171,19 @@
                 <!-- /.row -->
                 <div class="row">
                     <div class="col-lg-12">
+                        <%
+                            String status = request.getParameter("status");
+                            if (status != null) {
+                                if (status.equals("OK")) {
+                                    out.println("<h4 style='color:green;float:right'>");
+                                    out.println("Cliente cadastrado com sucesso!");
+                                    out.println("</h4>");
+                                }
+                            }
+                        %>
                         <div class="panel panel-default in">
                             <div class="panel-heading">
                                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@getbootstrap">Incluir nova compra</button>
-
                                 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                     <div class="modal-dialog" role="document">
                                         <div class="modal-content">
@@ -208,6 +224,7 @@
                                                                 <div class="col-lg-6">
                                                                     <label>Data do vencimento</label>
                                                                     <input type="text" name="vencecompra" id="vencecompra" class="form-control"/>
+                 
                                                                 </div>
                                                             </div>
                                                         </form>
@@ -225,7 +242,7 @@
                                     <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         Impressão
                                     </button>
-                                    <div class="dropdown-menu" x-placement="bottom-start" style="position: absolute; transform: translate3d(0px, 38px, 0px); top: 0px; left: 0px; will-change: transform;">
+                                    <div class="dropdown-menu">
                                         <a class="dropdown-item" href="#">Imprimir Lista de Compras a Pagar</a> 
 
                                     </div>
@@ -380,7 +397,7 @@
             </div>
         </div>
         <!-- /#wrapper -->
-
+        <script src="../../vendor/jquery/jquery-3.3.1.min.js" type="text/javascript"></script>
         <script src="../../vendor/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
         <!-- DataTables JavaScript -->
 
