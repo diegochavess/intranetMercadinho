@@ -180,8 +180,10 @@
                                 <a href="cadastrarFornecedor.jsp"><i class="fa fa-bar-chart-o fa-fw"></i> FORNECEDORES</a>
                             </li>
                             <li>
-                                <a href="relatorios.html"><i class="fa fa-table fa-fw"></i> RELATÓRIOS</a>
+
+                                <a href="../relatorios/relatorios.jsp"><i class="fa fa-table fa-fw"></i> RELATÓRIOS</a>
                             </li>
+                            
                             <li>
                                 <a href="estoque.html"><i class="fa fa-edit fa-fw"></i> ESTOQUE <span class="fa arrow"></span></a>
                                 <ul class="nav nav-second-level">
@@ -329,7 +331,7 @@
                                                                 <input type="text" name="numero" value="<%=(fornecedores.getNumero() == null) ? "" : fornecedores.getNumero()%>" class="form-control" id="numero">
                                                             </div>
                                                         </div>
-                                                        
+
                                                     </div>
                                                     <div class="row">
                                                         <div class="col-md-3">
@@ -378,7 +380,7 @@
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class="panel panel-default">
-                                    
+
                                     <div class="panel-heading">
                                         <h3>Todos os Fornecedores</h3>
                                     </div>
