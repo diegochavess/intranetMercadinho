@@ -1,3 +1,4 @@
+<%@page import="java.util.ArrayList"%>
 <%@page import="persistencia.FornecedorBD"%>
 <%@page import="dominio.Fornecedor"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -257,7 +258,7 @@
                                                         <div class="col-md-7">
                                                             <div class="form-group">
                                                                 <label for="cpf">CPF/CNPJ:</label>
-                                                                <input name="cpf" type="text" class="form-control" value="<%=fornecedores.getCpf()%>" id="cpf">
+                                                                <input name="cpf" type="text" class="form-control" value="<%=(fornecedores.getCpf() == null) ? "" : fornecedores.getCpf()%>" id="cpf">
                                                             </div>
                                                         </div>
                                                         <div class="col-md-4">
@@ -279,7 +280,7 @@
                                                         <div class="col-md-4">
 
                                                             <label for="endereco">Cidade:</label>
-                                                            <input type="text" class="form-control" value="<%=fornecedores.getCidade()%>" name="cidade" id="cidade">
+                                                            <input type="text" class="form-control" value="<%=(fornecedores.getCidade() == null) ? "" : fornecedores.getCidade()%>" name="cidade" id="cidade">
                                                         </div>
                                                         <div class="col-md-2">
                                                             <label for="uf">UF:</label>
@@ -319,13 +320,13 @@
                                                         <div class="col-md-10">
                                                             <div class="form-group">
                                                                 <label for="endereco">Endereço:</label>
-                                                                <input type="text" class="form-control" value="<%=fornecedores.getEndereco()%>" name="endereco" id="endereco">
+                                                                <input type="text" class="form-control" value="<%=(fornecedores.getEndereco() == null) ? "" : fornecedores.getEndereco()%>" name="endereco" id="endereco">
                                                             </div>
                                                         </div>
                                                         <div class="col-md-2">
                                                             <div class="form-group">
                                                                 <label for="numero">Número:</label>
-                                                                <input type="text" name="numero" value="<%=fornecedores.getNumero()%>" class="form-control" id="numero">
+                                                                <input type="text" name="numero" value="<%=(fornecedores.getNumero() == null) ? "" : fornecedores.getNumero()%>" class="form-control" id="numero">
                                                             </div>
                                                         </div>
                                                         
@@ -334,19 +335,19 @@
                                                         <div class="col-md-3">
                                                             <div class="form-group">
                                                                 <label for="telefone">Telefone:</label>
-                                                                <input type="text" name="telefone" class="form-control" value="<%=fornecedores.getTelefone()%>" id="telefone">
+                                                                <input type="text" name="telefone" class="form-control" value="<%=(fornecedores.getTelefone() == null) ? "" : fornecedores.getTelefone()%>" id="telefone">
                                                             </div>
                                                         </div>
                                                         <div class="col-md-3">
                                                             <div class="form-group">
                                                                 <label for="celular">Celular:</label>
-                                                                <input type="text" name="celular" class="form-control" value="<%=fornecedores.getCelular()%>" id="celular">
+                                                                <input type="text" name="celular" class="form-control" value="<%=(fornecedores.getCelular() == null) ? "" : fornecedores.getCpf()%>" id="Celular">
                                                             </div>
                                                         </div>
                                                         <div class="col-md-6">
                                                             <div class="form-group">
                                                                 <label for="email">E-mail:</label>
-                                                                <input type="text" name="email" class="form-control" value="<%=fornecedores.getEmail()%>" id="email">
+                                                                <input type="text" name="email" class="form-control" value="<%=(fornecedores.getEmail() == null) ? "" : fornecedores.getEmail()%>" id="email">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -377,6 +378,7 @@
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class="panel panel-default">
+                                    
                                     <div class="panel-heading">
                                         <h3>Todos os Fornecedores</h3>
                                     </div>
