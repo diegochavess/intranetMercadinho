@@ -1,14 +1,15 @@
 package dominio;
 
+import java.util.Date;
+
 public class Fornecedor {
     private String codigo;
     private String cpf;
-    private String data;
+    private Date data;
     private String descricao;
     private String observacoes;
     private String cidade;
     private String uf;
-    private String cep;
     private String numero;
     private String telefone;
     private String celular;
@@ -48,14 +49,6 @@ public class Fornecedor {
 
     public void setUf(String uf) {
         this.uf = uf;
-    }
-
-    public String getCep() {
-        return cep;
-    }
-
-    public void setCep(String cep) {
-        this.cep = cep;
     }
     
     public String getNumero() {
@@ -108,11 +101,11 @@ public class Fornecedor {
         this.cpf = cpf;
     }
 
-    public String getData() {
+    public Date getData() {
         return data;
     }
 
-    public void setData(String data) {
+    public void setData(Date data) {
         this.data = data;
     }
 

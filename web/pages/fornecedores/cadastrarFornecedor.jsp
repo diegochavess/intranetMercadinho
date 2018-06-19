@@ -73,10 +73,6 @@
                     uf: {
                         required: true
                     },
-                    cep: {
-                        required: true,
-                        cepBR: true,
-                    },
                     endereco: {
                         required: true
                     },
@@ -89,43 +85,43 @@
                         minlength: 13,
                     },
                     celular: {
-                        required: true,
+                        required: false,
                         minlength: 14,
                     },
 
                     email: {
-                        required: true,
+                        required: false,
                         validaEmail: true
                     },
 
-                },
-                
                 }
-            }),
+
+            })
         })
     </script>
-    
+
     <style type="text/css">
-            label.error{
-                color: red;
-            }
-            input.error{
-                border: 1px solid red;
-            }
-            .error{
-                font-size: 12px;
-            }
-        </style>
-    
+        label.error{
+            color: red;
+        }
+        input.error{
+            border: 1px solid red;
+        }
+        .error{
+            font-size: 12px;
+        }
+    </style>
+
     <body>
+
         <%
             Fornecedor fornecedores = null;
             String cpf = request.getParameter("cpf");
-            if(cpf != null){
+            if (cpf != null) {
                 fornecedores = FornecedorBD.getByCpf(cpf);
-            }else{
-                    fornecedores = new Fornecedor();
-        }
+            } else {
+                fornecedores = new Fornecedor();
+            }
         %>
 
         <div id="wrapper">
@@ -179,7 +175,8 @@
                                 <!-- /input-group -->
                             </li>
                             <li>
-                                <a href="fornecedores.html"><i class="fa fa-bar-chart-o fa-fw"></i> FORNECEDORES</a>
+
+                                <a href="cadastrarFornecedor.jsp"><i class="fa fa-bar-chart-o fa-fw"></i> FORNECEDORES</a>
                             </li>
                             <li>
                                 <a href="relatorios.html"><i class="fa fa-table fa-fw"></i> RELATÓRIOS</a>
@@ -238,7 +235,7 @@
                                         <h3>Novo Cadastro</h3>
                                     </div>
                                     <div class="panel-body">
-                                       <form name="formCadastro" id="formCadastro" method="post" action="incluir.jsp">
+                                        <form name="formCadastro" id="formCadastro" method="post" action="incluir.jsp">
 
                                             <div class="row">
 
@@ -247,7 +244,7 @@
                                                     <div class="form-group">
 
                                                         <label>Empresa</label>
-                                                        <input id="empresa" name="empresa" value="<%=fornecedores.getEmpresa()%>" type="text" class="form-control">
+                                                        <input id="empresa" name="empresa" value="<%=(fornecedores.getEmpresa() == null) ? "" : fornecedores.getEmpresa()%>" type="text" class="form-control">
                                                     </div>
 
                                                     <div class="row">
@@ -257,13 +254,13 @@
                                                                 <input id="codigo" name="codigo" type="number" value="" class="form-control">
                                                             </div>
                                                         </div>
-                                                        <div class="col-md-5" style="left: 180px;">
+                                                        <div class="col-md-7">
                                                             <div class="form-group">
                                                                 <label for="cpf">CPF/CNPJ:</label>
                                                                 <input name="cpf" type="text" class="form-control" value="<%=fornecedores.getCpf()%>" id="cpf">
                                                             </div>
                                                         </div>
-                                                        <div class="col-md-3" style="left: 255px;">
+                                                        <div class="col-md-4">
                                                             <div class="form-group">
                                                                 <label>Data de Cadastro</label>
                                                                 <input type="date" name="data" id="data" class="form-control">
@@ -319,24 +316,19 @@
                                                         </div>
                                                     </div>
                                                     <div class="row">
-                                                        <div class="col-md-8">
+                                                        <div class="col-md-10">
                                                             <div class="form-group">
                                                                 <label for="endereco">Endereço:</label>
                                                                 <input type="text" class="form-control" value="<%=fornecedores.getEndereco()%>" name="endereco" id="endereco">
                                                             </div>
                                                         </div>
-                                                        <div class="col-md-1">
+                                                        <div class="col-md-2">
                                                             <div class="form-group">
                                                                 <label for="numero">Número:</label>
                                                                 <input type="text" name="numero" value="<%=fornecedores.getNumero()%>" class="form-control" id="numero">
                                                             </div>
                                                         </div>
-                                                        <div class="col-md-3">
-                                                            <div class="form-group">
-                                                                <label for="cpf">CEP:</label>
-                                                                <input type="text" name="cep" class="form-control" value="<%=fornecedores.getCep()%>" id="cep">
-                                                            </div>
-                                                        </div>
+                                                        
                                                     </div>
                                                     <div class="row">
                                                         <div class="col-md-3">
@@ -346,7 +338,7 @@
                                                             </div>
                                                         </div>
                                                         <div class="col-md-3">
-                                                             <div class="form-group">
+                                                            <div class="form-group">
                                                                 <label for="celular">Celular:</label>
                                                                 <input type="text" name="celular" class="form-control" value="<%=fornecedores.getCelular()%>" id="celular">
                                                             </div>

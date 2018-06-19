@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package persistencia;
 
 import com.thoughtworks.xstream.XStream;
@@ -17,7 +13,7 @@ import java.util.ArrayList;
  */
 public class FornecedorBD {
     private static ArrayList<Fornecedor> lista = new ArrayList<Fornecedor>();
-    private static String caminho = "C:\\Users\\behbr\\Downloads\\PI\\";
+    private static String caminho = "C:\\Users\\behbr\\Desktop\\PI\\";
     public static void inserir(Fornecedor novoFornecedor){
         lerXml();
         lista.add(novoFornecedor);

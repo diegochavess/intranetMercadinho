@@ -23,9 +23,10 @@
         <%
         ArrayList<Fornecedor> fornecedores = FornecedorBD.listar();
         
-        for(int i=0; i < fornecedores.size(); i++);{
+        for(int i=0; i < fornecedores.size(); i++){
             Fornecedor cadaFornecedor = fornecedores.get(i);
         %>
+        
         <tr>
             <td><%=cadaFornecedor.getEmpresa()%></td>
              <td><%=cadaFornecedor.getCpf()%></td>
@@ -34,8 +35,7 @@
                 <td> 
                     <a href="excluir.jsp?cpf=<%=cadaFornecedor.getCpf()%>" onclick="return confirm('Deseja realmente excluir?')">Excluir</a>
                     <a href="cadastrarFornecedor.jsp?cpf=<%=cadaFornecedor.getCpf()%>">Alterar</a>
-                </td>
-            
+                </td>  
         </tr>
         
         
