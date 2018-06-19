@@ -7,8 +7,8 @@ public class Estoque{
     private int nCompra;
     private String tipoCompra;
     private double valorCompra;
-    private double dataCompra;
-    private double venceCompra;
+    private String dataCompra;
+    private String venceCompra;
 
     public String getEmpresa() {
         return empresa;
@@ -42,20 +42,20 @@ public class Estoque{
         this.valorCompra = valorCompra;
     }
 
-    public double getDataCompra() {
+    public String getDataCompra() {
         return dataCompra;
     }
 
-    public void setDataCompra(double dataCompra) {
+    public void setDataCompra(String dataCompra) {
         this.dataCompra = dataCompra;
     }
 
-    public double getVenceCompra() {
+    public String getVenceCompra() {
         return venceCompra;
     }
 
-    public void setVenceCompra(double venceCompra) {
+    public void setVenceCompra(String venceCompra) {
         this.venceCompra = venceCompra;
     }
 
-}   
+}

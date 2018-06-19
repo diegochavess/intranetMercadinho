@@ -15,11 +15,11 @@
     
     Estoque estoque = new Estoque();
     estoque.setEmpresa(empresa);        
-    estoque.setNCompra(ncompra);
+    estoque.setnCompra(ncompra);
     estoque.setTipoCompra(tipocompra);
     estoque.setValorCompra(Double.parseDouble(valorcompra));    
     estoque.setDataCompra(datacompra);
-    estoque.setVenceCompra(vencecompra);
+    estoque.setvenceCompra(vencecompra);
    
     
     // A classe de persistência EstoqueBD insere
