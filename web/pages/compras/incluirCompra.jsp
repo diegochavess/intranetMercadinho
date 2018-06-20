@@ -2,24 +2,24 @@
 <%@page import="dominio.Estoque"%>
 <%
     String empresa = request.getParameter("empresa");
-    String ncompra = request.getParameter("nCompra");    
-    String tipocompra = request.getParameter("tipoCompra");
-    String valorcompra = request.getParameter("valorCompra");
-    String datacompra = request.getParameter("dataCadastro");
+    String nCompra = request.getParameter("nCompra");    
+    String tipoCompra = request.getParameter("tipoCompra");
+    String valorCompra = request.getParameter("valorCompra");
+    String dataCompra = request.getParameter("dataCadastro");
     String venceCompra = request.getParameter("venceCompra");
         
-    valorcompra = valorcompra.replace(".", "");
-    valorcompra = valorcompra.replace(" ","");
-    valorcompra = valorcompra.replace("R$","");
-    valorcompra = valorcompra.replace(",",".");
+    valorCompra = valorCompra.replace(".", "");
+    valorCompra = valorCompra.replace(" ","");
+    valorCompra = valorCompra.replace("R$","");
+    valorCompra = valorCompra.replace(",",".");
     
     Estoque estoque = new Estoque();
     estoque.setEmpresa(empresa);        
-    estoque.setnCompra(ncompra);
-    estoque.setTipoCompra(tipocompra);
-    estoque.setValorCompra(Double.parseDouble(valorcompra));    
-    estoque.setDataCompra(datacompra);
-    estoque.setvenceCompra(vencecompra);
+    estoque.setNCompra(nCompra);
+    estoque.setTipoCompra(tipoCompra);
+    estoque.setValorCompra(Double.parseDouble(valorCompra));    
+    estoque.setDataCompra(dataCompra);
+    estoque.setVenceCompra(venceCompra);
    
     
     // A classe de persistência EstoqueBD insere

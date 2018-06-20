@@ -45,40 +45,40 @@
         <script src="../../dist/js/validation/jquery.validate.min.js" type="text/javascript"></script>
         <script src="../../dist/js/validation/localization/messages_pt_BR.js" type="text/javascript"></script>
         <script src="../../dist/js/validation/cpfBR.js" type="text/javascript"></script>        
-    
-<script type="text/javascript"> 
-    jQuery.noConflict();
-    jQuery(function($){
-       $("#datacompra").mask("99/99/9999");
-       $("#vencecompra").mask("99/99/9999");
-       $("#valorcompra").maskMoney({prefix: 'R$ ', thousands: '.', decimal: ',', affixesStay: true});       
-       $("#formCompra").validate({
-                    rules:{ empresa: {
-                        required: true,
-                        minlength: 8,
-                        maxlength: 100
-                    },
-                    ncompra: {
-                        required: true,
+
+        <script type="text/javascript">
+            jQuery.noConflict();
+            jQuery(function ($) {
+                $("#datacompra").mask("99/99/9999");
+                $("#vencecompra").mask("99/99/9999");
+                $("#valorcompra").maskMoney({prefix: 'R$ ', thousands: '.', decimal: ',', affixesStay: true});
+                $("#formCompra").validate({
+                    rules: {empresa: {
+                            required: true,
+                            minlength: 8,
+                            maxlength: 100
+                        },
+                        ncompra: {
+                            required: true,
                             number: true
-                    },
-                    tipocompra: {
-                        required: true
-                    },
-                    valorcompra: {
-                        required: true
-                    },
-                    datacompra: {
-                        required: true
-                    },
-                    vencecompra: {
-                        required: true
+                        },
+                        tipocompra: {
+                            required: true
+                        },
+                        valorcompra: {
+                            required: true
+                        },
+                        datacompra: {
+                            required: true
+                        },
+                        vencecompra: {
+                            required: true
+                        }
                     }
-                }
                 });
-    }); 
-</script>
-       
+            });
+        </script>
+
 
     </head>
 
@@ -136,7 +136,7 @@
                                 <a href="../fornecedores.html"><i class="fa fa-bar-chart-o fa-fw"></i> FORNECEDORES</a>
                             </li>
                             <li>
-                                
+
                                 <a href="../relatorios/relatorios.jsp"><i class="fa fa-table fa-fw"></i> RELATÓRIOS</a>
                             </li>
                             <li>
@@ -225,7 +225,7 @@
                                                                 <div class="col-lg-6">
                                                                     <label>Data do vencimento</label>
                                                                     <input type="text" name="vencecompra" id="vencecompra" class="form-control"/>
-                 
+
                                                                 </div>
                                                             </div>
                                                         </form>
