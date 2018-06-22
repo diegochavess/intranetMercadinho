@@ -1,11 +1,11 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@include file="pages/login/validarLogin.jsp" %>
 <!DOCTYPE html>
 <html>
     <head>
-        <meta http-equiv="refresh" content="0;url=pages/index.html">
         <title>SB Admin 2</title>
         <script language="javascript">
-            window.location.href = "pages/index.html";
+            window.location.href = "pages/index.jsp";
         </script>
     </head>
     <body>

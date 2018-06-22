@@ -2,6 +2,7 @@
 package dominio;
 
 public class Login {
+    private int codigo;
     private String login;
     private String senha;
     private String novaSenha;
@@ -30,11 +31,13 @@ public class Login {
         this.novaSenha = novaSenha;
     }
 
-    public int getcodigo() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public int getCodigo() {
+        return codigo;
     }
 
-    public void setCodigo(int i) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void setCodigo(int codigo) {
+        this.codigo = codigo;
     }
+
+    
 }

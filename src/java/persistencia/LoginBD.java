@@ -8,7 +8,7 @@ import java.util.ArrayList;
 
 public class LoginBD {
     private static ArrayList<Login> lista = new ArrayList<Login>();
-    private static String caminho = "F: \\PI\\NOVOPROJETO\\intranetMercadinho\\";
+    private static String caminho = "F:\\P I\\NOVOPROJETO\\intranetMercadinho\\";
     
     public static void inserir(Login novoLogin){
         lerXml();
@@ -17,7 +17,7 @@ public class LoginBD {
     }
         
     public static void alterar(Login LoginAlterado){
-        excluir(LoginAlterado.getcodigo());
+        excluir(LoginAlterado.getCodigo());
         inserir(LoginAlterado);
     }
     
@@ -25,7 +25,7 @@ public class LoginBD {
         lerXml();
         for(int i=0; i < lista.size(); i++){
             Login cadaLogin = lista.get(i);
-            if (cadaLogin.getcodigo() == codigo){
+            if (cadaLogin.getCodigo() == codigo){
                 lista.remove(i);
                 break;
             }

@@ -1,13 +1,5 @@
 <%@page import="dominio.Login"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%
-    Login LoginLogado = null;
-    if(session.getAttribute("Login") != null){
-       LoginLogado = (Login) session.getAttribute("Login");
-    }else{
-        response.sendRedirect("../login.jsp");
-    }
-%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -44,7 +36,7 @@
                         Login: {
                             required: true
                         },
-                        senha: {
+                        Senha: {
                             required: true
                         }
                     }
@@ -73,10 +65,10 @@
                         <h3 class="panel-title">Mercadinho Santa Izabel</h3>
                     </div>
                     <div class="panel-body">
-                        <form id="loginForm" method="post" action="index.jsp">
+                        <form id="loginForm" method="post" action="logar.jsp">
                             <fieldset>
                                 <div class="form-group">
-                                    <input class="form-control" placeholder="E-mail" name="Login" type="email" autofocus>
+                                    <input class="form-control" placeholder="Nome do usuário" name="Login" type="text" autofocus>
                                 </div>
                                 <div class="form-group">
                                     <input class="form-control" placeholder="Senha" name="Senha" type="password" value="">

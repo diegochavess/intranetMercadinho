@@ -1,3 +1,4 @@
+<%@include file="login/validarLogin.jsp" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -48,7 +49,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="index.html">PÃ¡gina Inicial</a>
+                    <a class="navbar-brand" href="index.html">Página Inicial</a>
                 </div>
                 <!-- /.navbar-header -->
 
@@ -61,10 +62,10 @@
                         <ul class="dropdown-menu dropdown-user">
                             <li><a href="#"><i class="fa fa-user fa-fw"></i> Perfil</a>
                             </li>
-                            <li><a href="#"><i class="fa fa-gear fa-fw"></i> ConfiguraÃ§Ãµes</a>
+                            <li><a href="#"><i class="fa fa-gear fa-fw"></i> Configurações</a>
                             </li>
                             <li class="divider"></li>
-                            <li><a href="login/login.jsp"><i class="fa fa-sign-out fa-fw"></i> Sair</a>
+                            <li><a href="login/sair.jsp"><i class="fa fa-sign-out fa-fw"></i> Sair</a>
                             </li>
                         </ul>
                         <!-- /.dropdown-user -->
@@ -91,7 +92,7 @@
                                 <a href="fornecedores/cadastrarFornecedor.jsp"><i class="fa fa-bar-chart-o fa-fw"></i> FORNECEDORES</a>
                             </li>
                             <li>
-                                <a href="relatorios/relatorios.jsp"><i class="fa fa-table fa-fw"></i> RELATÃ“RIOS</a>
+                                <a href="relatorios/relatorios.jsp"><i class="fa fa-table fa-fw"></i> RELATÓRIOS</a>
                                 
                             </li>
                             <li>
@@ -116,12 +117,12 @@
             </nav>
             <!-- CORPO 
                     DA
-                PÃGINA -->
+                PÁGINA -->
             <div id="page-wrapper">
                 <div class="row">
                     <div class="col-lg-12">
                         <h1 class="page-header"><i class="fa fa-shopping-cart fa-adjust fa-2x" id="logo"></i> MERCADINHO SANTA IZABEL</h1>
-                        <h2 class="page-header">Acesso RÃ¡pido</h2>
+                        <h2 class="page-header">Acesso Rápido</h2>
                     </div>
                     <!-- /.col-lg-12 -->
                 </div>
@@ -158,7 +159,7 @@
                                     </div>
                                     <div class="col-xs-9 text-right">
                                         <div class="huge">12</div>
-                                        <div>RELATÃ“RIOS</div>
+                                        <div>RELATÓRIOS</div>
                                     </div>
                                 </div>
                             </div>

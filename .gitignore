@@ -25,3 +25,4 @@ hs_err_pid*
 /xstream-1.4.8/
 /build/
 /build.xml
+/dist/
