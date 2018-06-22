@@ -67,8 +67,10 @@
                             <li><a href="#"><i class="fa fa-gear fa-fw"></i> Configurações</a>
                             </li>
                             <li class="divider"></li>
-                            <li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i> Sair</a>
+                            <li><a href="../login/login.jsp"><i class="fa fa-sign-out fa-fw"></i> Sair</a>
                             </li>
+                            
+
                         </ul>
                         <!-- /.dropdown-user -->
                     </li>
@@ -81,7 +83,7 @@
                         <ul class="nav" id="side-menu">
                             <li class="sidebar-search">
                                 <div class="input-group custom-search-form">
-                                    <input type="text" class="form-control" placeholder="Search...">
+                                    <input type="text" class="form-control" placeholder="Pesquisar...">
                                     <span class="input-group-btn">
                                         <button class="btn btn-default" type="button">
                                             <i class="fa fa-search"></i>
@@ -94,7 +96,7 @@
                                 <a href="../fornecedores/cadastrarFornecedor.jsp"><i class="fa fa-bar-chart-o fa-fw"></i> FORNECEDORES</a>
                             </li>
                             <li>
-                                <a href="relatorios.jsp"></a><i class="fa fa-table fa-fw"></i> RELATÓRIOS</a>
+                                <a href="relatorios.jsp"><i class="fa fa-table fa-fw"></i> RELATÓRIOS</a>
                             </li>
 
 
@@ -156,7 +158,7 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-lg-6">
+                        <div class="col-lg-3">
 
                             <canvas id="myChart" width="100" height="100"></canvas>
                             <script>
@@ -164,25 +166,15 @@
                                 var myChart = new Chart(ctx, {
                                     type: 'bar',
                                     data: {
-                                        labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+                                        labels: ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "setembro", "outubro", "Novembro", "Dezembro"],
                                         datasets: [{
-                                                label: '# of Votes',
-                                                data: [12, 19, 3, 5, 2, 3],
+                                                label: 'Lucro',
+                                                data: [12, 19, 3, 5, 2, 3, 4, 5, 8, 20, 16, 19],
                                                 backgroundColor: [
-                                                    'rgba(255, 99, 132, 0.2)',
-                                                    'rgba(54, 162, 235, 0.2)',
-                                                    'rgba(255, 206, 86, 0.2)',
-                                                    'rgba(75, 192, 192, 0.2)',
-                                                    'rgba(153, 102, 255, 0.2)',
-                                                    'rgba(255, 159, 64, 0.2)'
+
                                                 ],
                                                 borderColor: [
-                                                    'rgba(255,99,132,1)',
-                                                    'rgba(54, 162, 235, 1)',
-                                                    'rgba(255, 206, 86, 1)',
-                                                    'rgba(75, 192, 192, 1)',
-                                                    'rgba(153, 102, 255, 1)',
-                                                    'rgba(255, 159, 64, 1)'
+
                                                 ],
                                                 borderWidth: 1
                                             }]
@@ -192,6 +184,40 @@
                                             yAxes: [{
                                                     ticks: {
                                                         beginAtZero: true
+                                                    }
+                                                }]
+                                        }
+                                    }
+                                });
+                            </script>
+                        </div>
+                        <div class="col-lg-3">
+
+                            <canvas id="myChart" width="100" height="100"></canvas>
+                            <script>
+                                var ctx = document.getElementById("myChart").getContext('2d');
+                                var myChart = new Chart(ctx, {
+                                    type: 'bar',
+                                    data: {
+                                        labels: ["Higiene", "Limpeza", "Alimentos", "Frios", "Laticinios", "Carnes"],
+                                        datasets: [{
+                                                label: 'Estoque',
+                                                data: [12, 19, 3, 5, 2, 3],
+                                                backgroundColor: [
+                                                    
+
+                                                ],
+                                                borderColor: [
+
+                                                ],
+                                                borderWidth: 1
+                                            }]
+                                    },
+                                    options: {
+                                        scales: {
+                                            yAxes: [{
+                                                    ticks: {
+                                                       
                                                     }
                                                 }]
                                         }
@@ -230,11 +256,11 @@
 
         <!-- Page-Level Demo Scripts - Tables - Use for reference -->
         <script>
-                            $(document).ready(function () {
-                                $('#dataTables-example').DataTable({
-                                    responsive: true
+                                $(document).ready(function () {
+                                    $('#dataTables-example').DataTable({
+                                        responsive: true
+                                    });
                                 });
-                            });
         </script>
     </body>
 </html>
