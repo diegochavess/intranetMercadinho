@@ -192,7 +192,8 @@
                                         <a href="../CadastroProduto/CadastroProduto.jsp"><i class="fa fa-cubes fa-fw"></i>Cadastro de produtos</a>
                                     </li>
                                     <li>
-                                        <a href="compras.html"><i class="fa fa-shopping-cart fa-fw"></i>Compras</a>
+                                       
+                                        <a href="../compras/compras.jsp"><i class="fa fa-shopping-cart fa-fw"></i>Compras</a>
                                     </li>
                                 </ul>
                             </li>

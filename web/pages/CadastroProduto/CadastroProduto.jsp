@@ -65,12 +65,12 @@
                         grupo: {
                             required: true
                         },
-                       unidade: {
+                        unidade: {
                             required: true
                         },
                         preco: {
                             required: true,
-                            
+
                         },
                         estoqueMinimo: {
                             required: true
@@ -151,7 +151,8 @@
                                 <!-- /input-group -->
                             </li>
                             <li>
-                                <a href="../fornecedores.html"><i class="fa fa-bar-chart-o fa-fw"></i> FORNECEDORES</a>
+                                
+                                <a href="../fornecedores/cadastrarFornecedor.jsp"><i class="fa fa-bar-chart-o fa-fw"></i> FORNECEDORES</a>
                             </li>
                             <li>
                                 <a href="../relatorios/relatorios.jsp"><i class="fa fa-table fa-fw"></i> RELATÓRIOS</a>
@@ -160,7 +161,8 @@
                                 <a href="../estoque.html"><i class="fa fa-edit fa-fw"></i> ESTOQUE <span class="fa arrow"></span></a>
                                 <ul class="nav nav-second-level">
                                     <li>
-                                        <a href="../cadastrodeprodutos.html"><i class="fa fa-cubes fa-fw"></i>Cadastro de produtos</a>
+                                     
+                                         <a href="CadastroProduto.jsp"><i class="fa fa-cubes fa-fw"></i>Cadastro de produtos</a>
                                     </li>
                                     <li>
                                         <a href="../compras/compras.jsp"><i class="fa fa-shopping-cart fa-fw"></i>Compras</a>
@@ -179,7 +181,7 @@
             <!-- CORPO 
                     DA
                 PÁGINA -->
-             <%
+            <%
                 String status = request.getParameter("status");
                 if (status != null) {
                     if (status.equals("OK")) {
@@ -194,126 +196,183 @@
                     <div class="col-lg-12">
                         <h1 class="page-header">CADASTRO DE PRODUTOS</h1>
                     </div>
+                    <ul class="nav nav-tabs">
+                        <li class="active"><a data-toggle="tab" href="#cadastroProduto">CADASTRO</a></li>
+                        <li><a data-toggle="tab" href="#todosProdutos">TODOS</a></li>
+                    </ul>
                     <!-- /.col-lg-12 -->
                 </div>
-                <!-- /.row -->
-                <div class="row">
-                    <form name="formProduto" id="formProduto" method="post" action="incluir.jsp">
-                        <fieldset>
+                <div class="tab-content">
+                    <div id="cadastroProduto" class="tab-pane fade in active">
+                        <!-- /.row -->
 
-                            <!-- Form Name -->
-                            <legend>Cadastro de Produtos</legend>
+                        <div class="row">
+                            <form name="formProduto" id="formProduto" method="post" action="incluir.jsp">
+                                <fieldset>
 
-                            <!-- Text input-->
-                            <div class="form-group">
-                                <label class="col-md-4 control-label" for="txtcodigo_produto_id">Cód. Produto : </label>  
-                                <div class="col-md-2">
-                                    <input id="txtcodigo_produto_id" name="codigoProduto" type="text" placeholder="" class="form-control input-md">
+                                    <!-- Form Name -->
+                                    <legend>Cadastro de Produtos</legend>
 
-                                </div>
-                            </div>
-                            <br/><br/><br/>
+                                    <!-- Text input-->
+                                    <div class="form-group">
+                                        <label class="col-md-4 control-label" for="txtcodigo_produto_id">Cód. Produto : </label>  
+                                        <div class="col-md-2">
+                                            <input id="txtcodigo_produto_id" name="codigoProduto" type="text" placeholder="" class="form-control input-md">
 
-                            <!-- Text input-->
-                            <div class="form-group">
-                                <label class="col-md-4 control-label" for="txtproduto">Produto : </label>  
-                                <div class="col-md-6">
-                                    <input id="txtproduto" name="produto" type="text" placeholder="Descrição do Produto" class="form-control input-md" required="">
+                                        </div>
+                                    </div>
+                                    <br/><br/><br/>
 
-                                </div>
-                            </div>
-                            <br/><br/>
+                                    <!-- Text input-->
+                                    <div class="form-group">
+                                        <label class="col-md-4 control-label" for="txtproduto">Produto : </label>  
+                                        <div class="col-md-6">
+                                            <input id="txtproduto" name="produto" type="text" placeholder="Descrição do Produto" class="form-control input-md" required="">
 
-                            <!-- Select Basic -->
-                            <div class="form-group">
-                                <label class="col-md-4 control-label" for="txtgrupo">Grupo : </label>
-                                <div class="col-md-4">
-                                    <select id="txtgrupo" name="grupo" class="form-control">
-                                        <option value=""selected="selected">Selecione</option>
-                                        <option value="1">Higiêne</option>
-                                        <option value="2">Consumo</option>
-                                        <option value="3">Limpesa</option>
-                                        <option value="4">Material de Escritório</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <br/><br/><br/>
+                                        </div>
+                                    </div>
+                                    <br/><br/>
 
-                            <!-- Select Basic -->
-                            <div class="form-group">
-                                <label class="col-md-4 control-label" for="txtcodigo_unidade_id">Unidade : </label>
-                                <div class="col-md-6">
-                                    <select id="txtcodigo_unidade_id" name="unidade" class="form-control">
-                                         <option value=""selected="selected">Selecione</option>
-                                        <option value="UND">Unidade</option>
-                                        <option value="CX">Caixa</option>
-                                        <option value="PC">Pacote</option>
-                                        <option value="FAR">Fardo</option>
-                                        <option value="kg">Kg</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <br/><br/><br/>
-                            <div class="form-group">
-                                <label class="col-md-4 control-label" for="txtpreco">Preço : </label>  
-                                <div class="col-md-6">
-                                    <input id="txtpreco" name="preco" type="text" placeholder="Preço do Produto" class="form-control input-md" required="">
+                                    <!-- Select Basic -->
+                                    <div class="form-group">
+                                        <label class="col-md-4 control-label" for="txtgrupo">Grupo : </label>
+                                        <div class="col-md-4">
+                                            <select id="txtgrupo" name="grupo" class="form-control">
+                                                <option value=""selected="selected">Selecione</option>
+                                                <option value="1">Higiêne</option>
+                                                <option value="2">Consumo</option>
+                                                <option value="3">Limpesa</option>
+                                                <option value="4">Material de Escritório</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <br/><br/><br/>
 
-                                </div>
-                            </div>
-                            <br/><br/><br/>
-                            <!-- Text input-->
-                            <div class="form-group">
-                                <label class="col-md-4 control-label" for="txtestoque_minimo">Estoque Mínimo : </label>  
-                                <div class="col-md-6">
-                                    <input id="txtestoque_minimo" name="estoqueMinimo" type="text" placeholder="" class="form-control input-md" required="">
+                                    <!-- Select Basic -->
+                                    <div class="form-group">
+                                        <label class="col-md-4 control-label" for="txtcodigo_unidade_id">Unidade : </label>
+                                        <div class="col-md-6">
+                                            <select id="txtcodigo_unidade_id" name="unidade" class="form-control">
+                                                <option value=""selected="selected">Selecione</option>
+                                                <option value="UND">Unidade</option>
+                                                <option value="CX">Caixa</option>
+                                                <option value="PC">Pacote</option>
+                                                <option value="FAR">Fardo</option>
+                                                <option value="kg">Kg</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <br/><br/><br/>
+                                    <div class="form-group">
+                                        <label class="col-md-4 control-label" for="txtpreco">Preço : </label>  
+                                        <div class="col-md-6">
+                                            <input id="txtpreco" name="preco" type="text" placeholder="Preço do Produto" class="form-control input-md" required="">
 
-                                </div>
-                            </div>
-                            <br/><br/>
-                            <!-- Text input-->
-                            <div class="form-group">
-                                <label class="col-md-4 control-label" for="txtestoque_atual">Estoque Atual : </label>  
-                                <div class="col-md-6">
-                                    <input id="txtestoque_atual" name="estoqueAtual" type="text" placeholder="" class="form-control input-md">
+                                        </div>
+                                    </div>
+                                    <br/><br/>
+                                    <!-- Text input-->
+                                    <div class="form-group">
+                                        <label class="col-md-4 control-label" for="txtestoque_minimo">Estoque Mínimo : </label>  
+                                        <div class="col-md-6">
+                                            <input id="txtestoque_minimo" name="estoqueMinimo" type="text" placeholder="" class="form-control input-md" required="">
 
-                                </div>
-                            </div>
-                            <br/><br/><br/><br/>
-                            <!-- Button (Double) -->
-                            <div class="form-group">
-                                <label class="col-md-4 control-label" for="btnsalvar"></label>
-                                <div class="col-md-8">
-                                    <button id="btnsalvar" name="btnsalvar" class="btn btn-primary">Salvar</button>
-                                    <button id="btncancelar" name="btncancelar" class="btn btn-danger">Cancelar</button>
-                                </div>
-                            </div>
+                                        </div>
+                                    </div>
+                                    <br/><br/>
+                                    <!-- Text input-->
+                                    <div class="form-group">
+                                        <label class="col-md-4 control-label" for="txtestoque_atual">Estoque Atual : </label>  
+                                        <div class="col-md-6">
+                                            <input id="txtestoque_atual" name="estoqueAtual" type="text" placeholder="" class="form-control input-md">
 
-                        </fieldset>
-                    </form>
+                                        </div>
+                                    </div>
+                                    <br/><br/>
+                                    <!-- Button (Double) -->
+                                    <div class="form-group">
+                                        <label class="col-md-4 control-label" for="btnsalvar"></label>
+                                        <div class="col-md-8">
+                                            <button id="btnsalvar" name="btnsalvar" class="btn btn-primary">Salvar</button>
+                                            <button id="btncancelar" name="btncancelar" class="btn btn-danger">Cancelar</button>
+                                        </div>
+                                    </div>
+                                    </div>
+                                    </div>
+                                    <br/>
+                                    <div id="todosProdutos" class="tab-pane fade in">
+                                        <div class="row">
+                                            <div class="col-lg-12">
+                                                <div class="panel panel-default">
+                                                    <div class="panel-heading">
+                                                        <h3>TODOS</h3>
+                                                    </div>
+                                                    <!-- /.panel-heading -->
+                                                    <div class="panel-body">
+                                                        <h1>Lista de Produto</h1>
+                                                        <%
+                                                            ArrayList<CadastroProduto> listaProdutos = CadastroProdutoBD.listar();
+                                                        %>
+                                                        <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th>Produto</th>
+                                                                    <th>Preço</th>
+                                                                    <th>estoque Minimo</th>
+                                                                    <th>estoque Atual</th>
+                                                                    <th></th>
+                                                                    <th></th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <%
+                                                                    for (int i = 0; i < listaProdutos.size(); i++) {
+                                                                        CadastroProduto cadaCadastroProduto = listaProdutos.get(i);
+                                                                %>
+                                                                <tr class="odd gradeX">
+                                                                    <td><%=cadaCadastroProduto.getProduto()%></td>
+                                                                    <td><%=cadaCadastroProduto.getPreco()%></td>
+                                                                    <td><%=cadaCadastroProduto.getEstoqueMinimo()%></td>
+                                                                    <td><%=cadaCadastroProduto.getEstoqueAtual()%></td>
+                                                                    <td class="center"><a href="excluir.jsp?codigoProduto=<%=cadaCadastroProduto.getCodigoProduto()%>" onclick="return confirm('Deseja realmente excluir?')">Excluir</a></td>
+                                                                    <td class="center"><a href="cadastroProduto.jsp?codigoProduto=<%=cadaCadastroProduto.getCodigoProduto()%>">Alterar</a></td>
+                                                                </tr>
+                                                                <%
+                                                                    }
+                                                                %>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
 
-                    <!-- /.col-lg-12 -->
+                                </fieldset>
+                            </form>
+
+                            <!-- /.col-lg-12 -->
+                        </div>
+                        <!-- /.row -->
+                    </div>
+                    <!-- /#page-wrapper -->
+
                 </div>
-                <!-- /.row -->
-            </div>
-            <!-- /#page-wrapper -->
+                <!-- /#wrapper -->
 
-        </div>
-        <!-- /#wrapper -->
+                <!-- jQuery -->
+                <script src="../vendor/jquery/jquery.min.js"></script>
 
-        <!-- jQuery -->
-        <script src="../vendor/jquery/jquery.min.js"></script>
+                <!-- Bootstrap Core JavaScript -->
+                <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
 
-        <!-- Bootstrap Core JavaScript -->
-        <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
+                <!-- Metis Menu Plugin JavaScript -->
+                <script src="../vendor/metisMenu/metisMenu.min.js"></script>
 
-        <!-- Metis Menu Plugin JavaScript -->
-        <script src="../vendor/metisMenu/metisMenu.min.js"></script>
+                <!-- Custom Theme JavaScript -->
+                <script src="../dist/js/sb-admin-2.js"></script>
 
-        <!-- Custom Theme JavaScript -->
-        <script src="../dist/js/sb-admin-2.js"></script>
+                </body>
 
-    </body>
-
-</html>
+                </html>
 

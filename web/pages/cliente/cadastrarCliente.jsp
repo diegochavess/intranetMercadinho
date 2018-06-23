@@ -174,7 +174,8 @@
                                 <!-- /input-group -->
                             </li>
                             <li>
-                                <a href="../fornecedores.html"><i class="fa fa-bar-chart-o fa-fw"></i> FORNECEDORES</a>
+                              
+                                 <a href="../fornecedores/cadastrarFornecedor.jsp"><i class="fa fa-bar-chart-o fa-fw"></i> FORNECEDORES</a>
                             </li>
                             <li>    
                                 <a href="../relatorios/relatorios.jsp"><i class="fa fa-table fa-fw"></i> RELATÓRIOS</a>
@@ -183,7 +184,8 @@
                                 <a href="../estoque.html"><i class="fa fa-edit fa-fw"></i> ESTOQUE <span class="fa arrow"></span></a>
                                 <ul class="nav nav-second-level">
                                     <li>
-                                        <a href="../cadastrodeprodutos.html"><i class="fa fa-cubes fa-fw"></i>Cadastro de produtos</a>
+                                       
+                                         <a href="../CadastroProduto/CadastroProduto.jsp"><i class="fa fa-cubes fa-fw"></i>Cadastro de produtos</a>
                                     </li>
                                     <li>
                                         <a href="../compras/compras.jsp"><i class="fa fa-shopping-cart fa-fw"></i>Compras</a>
@@ -191,7 +193,7 @@
                                 </ul>
                             </li>
                             <li>
-                                <a href="cliente/cadastrarCliente.jsp"><i class="fa fa-users fa-fw"></i> CLIENTES</a>
+                                <a href="/intranetMercadinho/pages/cliente/cadastrarCliente.jsp"><i class="fa fa-users fa-fw"></i> CLIENTES</a>
                             </li>
                         </ul>
                     </div>
