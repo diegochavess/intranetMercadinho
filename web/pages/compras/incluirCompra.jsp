@@ -2,10 +2,10 @@
 <%@page import="dominio.Estoque"%>
 <%
     String empresa = request.getParameter("empresa");
-    String nCompra = request.getParameter("nCompra");    
+    String numCompra = request.getParameter("numCompra");    
     String tipoCompra = request.getParameter("tipoCompra");
     String valorCompra = request.getParameter("valorCompra");
-    String dataCompra = request.getParameter("dataCadastro");
+    String dataCompra = request.getParameter("dataCompra");
     String venceCompra = request.getParameter("venceCompra");
         
     valorCompra = valorCompra.replace(".", "");
@@ -15,7 +15,7 @@
     
     Estoque estoque = new Estoque();
     estoque.setEmpresa(empresa);        
-    estoque.setNCompra(nCompra);
+    estoque.setNumCompra(Integer.parseInt(numCompra));
     estoque.setTipoCompra(tipoCompra);
     estoque.setValorCompra(Double.parseDouble(valorCompra));    
     estoque.setDataCompra(dataCompra);

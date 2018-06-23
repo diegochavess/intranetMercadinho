@@ -8,7 +8,7 @@ import java.util.ArrayList;
 
 public class CadastroProdutoBD {
 
-    private static final String caminho = "I:\\novo projeto\\intranetMercadinho\\";
+    private static final String caminho = "G:\\novo projeto\\intranetMercadinho\\";
    
     private static ArrayList<CadastroProduto> lista = new ArrayList<CadastroProduto>();
     

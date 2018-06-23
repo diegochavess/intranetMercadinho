@@ -136,7 +136,8 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="index.html">Página Inicial</a>
+                
+                    <a class="navbar-brand" href="../index.html">Página Inicial</a>
                 </div>
                 <!-- /.navbar-header -->
 
@@ -192,12 +193,14 @@
                                         <a href="../CadastroProduto/CadastroProduto.jsp"><i class="fa fa-cubes fa-fw"></i>Cadastro de produtos</a>
                                     </li>
                                     <li>
-                                        <a href="compras.html"><i class="fa fa-shopping-cart fa-fw"></i>Compras</a>
+                                       
+                                        <a href="../compras/compras.jsp"><i class="fa fa-shopping-cart fa-fw"></i>Compras</a>
                                     </li>
                                 </ul>
                             </li>
                             <li>
-                                <a href="cliente/cadastrarCliente.jsp"><i class="fa fa-users fa-fw"></i> CLIENTES</a>
+                               
+                                <a href="../cliente/cadastrarCliente.jsp"><i class="fa fa-users fa-fw"></i> CLIENTES</a>
                             </li>
                         </ul>
                     </div>

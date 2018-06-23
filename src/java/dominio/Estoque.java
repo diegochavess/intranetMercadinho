@@ -4,7 +4,7 @@ package dominio;
 
 public class Estoque{
     private String empresa;
-    private int nCompra;
+    private int numCompra;
     private String tipoCompra;
     private double valorCompra;
     private String dataCompra;
@@ -18,12 +18,12 @@ public class Estoque{
         this.empresa = empresa;
     }
 
-    public int getnCompra() {
-        return nCompra;
+    public int getNumCompra() {
+        return numCompra;
     }
 
-    public void setnCompra(int nCompra) {
-        this.nCompra = nCompra;
+    public void setNumCompra(int numCompra) {
+        this.numCompra = numCompra;
     }
 
     public String getTipoCompra() {

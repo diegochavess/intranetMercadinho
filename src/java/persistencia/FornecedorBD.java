@@ -13,7 +13,7 @@ import java.util.ArrayList;
  */
 public class FornecedorBD {
     private static ArrayList<Fornecedor> lista = new ArrayList<Fornecedor>();
-    private static String caminho = "C:\\Users\\behbr\\Desktop\\PI\\";
+    private static String caminho = "D:\\";
     public static void inserir(Fornecedor novoFornecedor){
         lerXml();
         lista.add(novoFornecedor);
@@ -70,7 +70,7 @@ public class FornecedorBD {
          XStream xstream = new XStream();
         xstream.alias("fornecedor",Fornecedor.class);
         try{
-            FileWriter escritor=new FileWriter(caminho + "fornecedor.xml");
+            FileWriter escritor=new FileWriter(caminho + "fornecedores.xml");
             escritor.write( xstream.toXML(lista) );
             escritor.close();
         }catch(Exception ex){
