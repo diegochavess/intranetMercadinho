@@ -158,7 +158,7 @@
                                 <a href="../relatorios/relatorios.jsp"><i class="fa fa-table fa-fw"></i> RELATÓRIOS</a>
                             </li>
                             <li>
-                                <a href="../estoque.html"><i class="fa fa-edit fa-fw"></i> ESTOQUE <span class="fa arrow"></span></a>
+                                <a><i class="fa fa-edit fa-fw"></i> ESTOQUE <span class="fa arrow"></span></a>
                                 <ul class="nav nav-second-level">
                                     <li>
                                      
@@ -170,7 +170,8 @@
                                 </ul>
                             </li>
                             <li>
-                                <a href="cliente/cadastrarCliente.jsp"><i class="fa fa-users fa-fw"></i> CLIENTES</a>
+                                
+                                <a href="../cliente/cadastrarCliente.jsp"><i class="fa fa-users fa-fw"></i> CLIENTES</a>
                             </li>
                         </ul>
                     </div>
