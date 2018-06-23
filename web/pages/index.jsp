@@ -1,4 +1,7 @@
-<%@include file="login/validarLogin.jsp" %>
+<%@page import="persistencia.CadastroProdutoBD"%>
+<%@page import="dominio.CadastroProduto"%>
+<%@page import="java.util.ArrayList"%>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -49,7 +52,8 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="index.html">Página Inicial</a>
+                    
+                    <a class="navbar-brand" href="index.jsp">Página Inicial</a>
                 </div>
                 <!-- /.navbar-header -->
 
@@ -181,7 +185,10 @@
                                         <i class="fa fa-shopping-cart fa-5x"></i>
                                     </div>
                                     <div class="col-xs-9 text-right">
-                                        <div class="huge">1257</div>
+                                         <%
+                                            ArrayList<CadastroProduto> listaProdutos = CadastroProdutoBD.listar();
+                                        %>
+                                        <div class="huge"><%=listaProdutos.size()%></div>
                                         <div>ESTOQUE</div>
                                     </div>
                                 </div>

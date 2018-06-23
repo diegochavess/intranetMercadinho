@@ -111,7 +111,8 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="../index.html">Página Inicial</a>
+                    
+                    <a class="navbar-brand" href="../index.jsp">Página Inicial</a>
                 </div>
                 <!-- /.navbar-header -->
 
