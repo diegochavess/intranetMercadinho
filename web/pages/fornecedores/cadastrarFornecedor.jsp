@@ -136,7 +136,8 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="index.html">Página Inicial</a>
+                
+                    <a class="navbar-brand" href="../index.html">Página Inicial</a>
                 </div>
                 <!-- /.navbar-header -->
 
@@ -198,7 +199,8 @@
                                 </ul>
                             </li>
                             <li>
-                                <a href="cliente/cadastrarCliente.jsp"><i class="fa fa-users fa-fw"></i> CLIENTES</a>
+                               
+                                <a href="../cliente/cadastrarCliente.jsp"><i class="fa fa-users fa-fw"></i> CLIENTES</a>
                             </li>
                         </ul>
                     </div>
