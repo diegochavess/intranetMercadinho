@@ -52,7 +52,7 @@
         if(erro != null){
         if (erro.equals("USUARIO_NAO_EXISTE")){
     %>
-    Esse usuário não existe
+    <h2>Esse usuário não existe</h2>
 <%
     }
 }
