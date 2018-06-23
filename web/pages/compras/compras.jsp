@@ -49,29 +49,29 @@
         <script type="text/javascript">
             jQuery.noConflict();
             jQuery(function ($) {
-                $("#datacompra").mask("99/99/9999");
-                $("#vencecompra").mask("99/99/9999");
-                $("#valorcompra").maskMoney({prefix: 'R$ ', thousands: '.', decimal: ',', affixesStay: true});
+                $("#dataCompra").mask("99/99/9999");
+                $("#venceCompra").mask("99/99/9999");
+                $("#valorCompra").maskMoney({prefix: 'R$ ', thousands: '.', decimal: ',', affixesStay: true});
                 $("#formCompra").validate({
                     rules: {empresa: {
                             required: true,
                             minlength: 8,
                             maxlength: 100
                         },
-                        ncompra: {
+                        nCompra: {
                             required: true,
                             number: true
                         },
-                        tipocompra: {
+                        tipoCompra: {
                             required: true
                         },
-                        valorcompra: {
+                        valorCompra: {
                             required: true
                         },
-                        datacompra: {
+                        dataCompra: {
                             required: true
                         },
-                        vencecompra: {
+                        venceCompra: {
                             required: true
                         }
                     }
@@ -133,18 +133,17 @@
                                 <!-- /input-group -->
                             </li>
                             <li>
-                                <a href="../fornecedores.html"><i class="fa fa-bar-chart-o fa-fw"></i> FORNECEDORES</a>
+                                <a href="../fornecedores/cadastrarFornecedor.jsp"><i class="fa fa-bar-chart-o fa-fw"></i> FORNECEDORES</a>
                             </li>
-                            <li>
-
+                            <li>                             
                                 <a href="../relatorios/relatorios.jsp"><i class="fa fa-table fa-fw"></i> RELATÓRIOS</a>
                             </li>
                             <li>
                                 <a href="../estoque.html"><i class="fa fa-edit fa-fw"></i> ESTOQUE <span class="fa arrow"></span></a>
                                 <ul class="nav nav-second-level">
                                     <li>
-                                        <a href="../cadastrodeprodutos.html"><i class="fa fa-cubes fa-fw"></i>Cadastro de produtos</a>
-                                    </li>
+                                       <a href="../CadastroProduto/CadastroProduto.jsp"><i class="fa fa-cubes fa-fw"></i>Cadastro de produtos</a>
+                                    </li>                                    
                                     <li>
                                         <a href="compras/compras.jsp"><i class="fa fa-shopping-cart fa-fw"></i>Compras</a>
                                     </li>
@@ -153,6 +152,7 @@
                             <li>
                                 <a href="../cliente/cadastrarCliente.jsp"><i class="fa fa-users fa-fw"></i> CLIENTES</a>
                             </li>
+                            
                         </ul>
                     </div>
                     <!-- /.sidebar-collapse -->
@@ -205,37 +205,38 @@
                                                             <div class="row">
                                                                 <div class="col-lg-4">
                                                                     <label>Nº da Compra</label>
-                                                                    <input type="text" name="ncompra" id="ncompra" class="form-control"/>
+                                                                    <input type="text" name="numCompra" id="numCompra" class="form-control"/>
                                                                 </div>
                                                                 <div class="col-lg-5">
                                                                     <label>Tipo de Compra</label>
-                                                                    <input type="text" name="tipocompra" 
-                                                                           id="tipocompra" class="form-control"/>
+                                                                    <input type="text" name="tipoCompra" 
+                                                                           id="tipoCompra" class="form-control"/>
                                                                 </div>
                                                                 <div class="col-lg-3">
                                                                     <label>Valor da compra</label>
-                                                                    <input type="text" name="valorcompra" id="valorcompra" class="form-control"/>
+                                                                    <input type="text" name="valorCompra" id="valorCompra" class="form-control"/>
                                                                 </div>
                                                             </div>
                                                             <div class="row">
                                                                 <div class="col-lg-6">
                                                                     <label>Data da compra</label>
-                                                                    <input type="text" name="datacompra" id="datacompra" class="form-control"/>
+                                                                    <input type="text" name="dataCompra" id="dataCompra" class="form-control"/>
                                                                 </div>
                                                                 <div class="col-lg-6">
                                                                     <label>Data do vencimento</label>
-                                                                    <input type="text" name="vencecompra" id="vencecompra" class="form-control"/>
+                                                                    <input type="text" name="venceCompra" id="venceCompra" class="form-control"/>
 
                                                                 </div>
                                                             </div>
+                                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                                                <input type="submit" name="salvar" value="Salvar" class="btn btn-primary"/>
+                                            </div>
                                                         </form>
                                                     </div>
                                                 </article>
                                             </div>
-                                            <div class="modal-footer">
-                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-                                                <input type="submit" name="salvar" value="Salvar" class="btn btn-primary"/>
-                                            </div>
+                                            
                                         </div>
                                     </div>
                                 </div>
@@ -283,6 +284,9 @@
                                             <!-- /.panel-heading -->
                                             <div class="panel-body">
                                                 <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
+                                                    <%
+                                                ArrayList<Estoque> lista = EstoqueBD.listar();
+                                            %>
                                                     <thead>
                                                         <tr>
                                                             <th>Nº da compra</th>
@@ -294,97 +298,22 @@
                                                         </tr>
                                                     </thead>
                                                     <tbody>
+                                                         <%
+                                                        for (int i = 0; i < lista.size(); i++) {
+                                                            Estoque cadaEstoque = lista.get(i);
+                                                    %>
                                                         <tr class="odd gradeX">
-                                                            <td>1</td>
-                                                            <td>Spani</td>
-                                                            <td>R$200,00</td>
-                                                            <td class="center">00/00/00</td>
-                                                            <td class="center">00/00/00</td>
+                                                            <td><%=cadaEstoque.getNumCompra()%></td>
+                                                            <td><%=cadaEstoque.getEmpresa()%></td>
+                                                            <td><%=cadaEstoque.getValorCompra()%></td>
+                                                            <td class="center"><%=cadaEstoque.getDataCompra()%></td>
+                                                            <td class="center"><%=cadaEstoque.getVenceCompra()%></td>
+                                                            
+                                                        <td class="center"><a href="excluirEstoque.jsp?numCompra=<%=cadaEstoque.getNumCompra()%>" class="btn btn-danger">Remover</a></td>
                                                         </tr>
-                                                        <tr class="even gradeC">
-                                                            <td>2</td>
-                                                            <td>Maximo</td>
-                                                            <td>R$200,00</td>
-                                                            <td class="center">00/00/00</td>
-                                                            <td class="center">00/00/00</td>
-                                                        </tr>
-                                                        <tr class="odd gradeA">
-                                                            <td>3</td>
-                                                            <td>Spani</td>
-                                                            <td>R$200,00</td>
-                                                            <td class="center">00/00/00</td>
-                                                            <td class="center">00/00/00</td>
-                                                        </tr>
-                                                        <tr class="even gradeA">
-                                                            <td>4</td>
-                                                            <td>Extra</td>
-                                                            <td>R$200,00</td>
-                                                            <td class="center">00/00/00</td>
-                                                            <td class="center">00/00/00</td>
-                                                        </tr>
-                                                        <tr class="odd gradeA">
-                                                            <td>5</td>
-                                                            <td>Spani</td>
-                                                            <td>R$200,00</td>
-                                                            <td class="center">00/00/00</td>
-                                                            <td class="center">00/00/00</td>
-                                                        </tr>
-                                                        <tr class="even gradeA">
-                                                            <td>6</td>
-                                                            <td>Extra</td>
-                                                            <td>R$200,00</td>
-                                                            <td class="center">00/00/00</td>
-                                                            <td class="center">00/00/00</td>
-                                                        </tr>
-                                                        <tr class="gradeA">
-                                                            <td>7</td>
-                                                            <td>Extra</td>
-                                                            <td>R$200,00</td>
-                                                            <td class="center">00/00/00</td>
-                                                            <td class="center">00/00/00</td>
-                                                        </tr>
-                                                        <tr class="gradeA">
-                                                            <td>8</td>
-                                                            <td>Spani</td>
-                                                            <td>R$200,00</td>
-                                                            <td class="center">00/00/00</td>
-                                                            <td class="center">00/00/00</td>
-                                                        </tr>
-                                                        <tr class="gradeA">
-                                                            <td>9</td>
-                                                            <td>Extra</td>
-                                                            <td>R$200,00</td>
-                                                            <td class="center">00/00/00</td>
-                                                            <td class="center">00/00/00</td>
-                                                        </tr>
-                                                        <tr class="gradeA">
-                                                            <td>10</td>
-                                                            <td>Spani</td>
-                                                            <td>R$200,00</td>
-                                                            <td class="center">00/00/00</td>
-                                                            <td class="center">00/00/00</td>
-                                                        </tr>
-                                                        <tr class="gradeA">
-                                                            <td>Gecko</td>
-                                                            <td>Camino 1.0</td>
-                                                            <td>OSX.2+</td>
-                                                            <td class="center">1.8</td>
-                                                            <td class="center">A</td>
-                                                        </tr>
-                                                        <tr class="gradeA">
-                                                            <td>Gecko</td>
-                                                            <td>Camino 1.5</td>
-                                                            <td>OSX.3+</td>
-                                                            <td class="center">1.8</td>
-                                                            <td class="center">A</td>
-                                                        </tr>
-                                                        <tr class="gradeA">
-                                                            <td>Gecko</td>
-                                                            <td>Netscape 7.2</td>
-                                                            <td>Win 95+ / Mac OS 8.6-9.2</td>
-                                                            <td class="center">1.7</td>
-                                                            <td class="center">A</td>
-                                                        </tr>
+                                                        <%
+                                                        }
+                                                    %>
                                                     </tbody>
                                                 </table>
                                             </div>
