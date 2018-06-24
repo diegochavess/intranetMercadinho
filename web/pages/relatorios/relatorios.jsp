@@ -1,7 +1,9 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
     <head>
+
 
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,6 +13,7 @@
         <link rel="shortcut icon" href="../img/favicon.ico" />
         <title>Mercadinho Santa Izabel</title>
 
+        
         <!-- Bootstrap Core CSS -->
 
 
@@ -51,7 +54,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="../index.html">Página Inicial</a>
+                    <a class="navbar-brand" href="../index.jsp">Página Inicial</a>
                 </div>
                 <!-- /.navbar-header -->
 
@@ -69,7 +72,7 @@
                             <li class="divider"></li>
                             <li><a href="../login/login.jsp"><i class="fa fa-sign-out fa-fw"></i> Sair</a>
                             </li>
-                            
+
 
                         </ul>
                         <!-- /.dropdown-user -->
@@ -146,10 +149,11 @@
                                     </div>
                                     <div class="modal-body">
 
-                                        <a href="#"><img style="max-height: 50px;max-width: 50px" src="../img/Excel_2013.png" alt="Relatório Mensal - Despesas Mercadinho" />  Relatório Mensal - Despesas Mercadinho</a>
+                                        <a href="#"><img style="max-height: 50px;max-width: 50px" src="../../img/Excel_2013.png" alt="Relatório Mensal - Despesas Mercadinho" />  Relatório Mensal - Despesas Mercadinho</a>
                                         <div class="dropdown-divider"></div>
-                                        <a href="#"><img style="max-height: 50px;max-width: 50px" src="../img/Excel_2013.png" alt="Relatório Mensal - Despesas Pessoais" />  Relatório Mensal - Despesas Pessoais</a>
+                                        <a href="#"><img style="max-height: 50px;max-width: 50px" src="../../img/Excel_2013.png" alt="Relatório Mensal - Despesas Pessoais" />  Relatório Mensal - Despesas Pessoais</a>
                                     </div>
+                                    
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
                                     </div>
@@ -204,7 +208,6 @@
                                                 label: 'Estoque',
                                                 data: [12, 19, 3, 5, 2, 3],
                                                 backgroundColor: [
-                                                    
 
                                                 ],
                                                 borderColor: [
@@ -217,7 +220,7 @@
                                         scales: {
                                             yAxes: [{
                                                     ticks: {
-                                                       
+
                                                     }
                                                 }]
                                         }
