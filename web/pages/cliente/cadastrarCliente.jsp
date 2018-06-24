@@ -1,3 +1,5 @@
+<%@page import="java.text.NumberFormat"%>
+<%@page import="java.util.Locale"%>
 <%@page import="persistencia.ClienteBD"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="dominio.Cliente"%>
