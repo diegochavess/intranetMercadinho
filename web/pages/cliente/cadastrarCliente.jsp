@@ -2,6 +2,7 @@
 <%@page import="java.util.ArrayList"%>
 <%@page import="dominio.Cliente"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -81,18 +82,17 @@
                         },
                         telefone: {
                             required: true,
-                            minlength: 13,
+                            minlength: 13
                         },
                         celular: {
                             required: true,
-                            minlength: 14,
+                            minlength: 14
                         },
                         cpf: {
                             required: true,
                             cpfBR: true
                         },
                         email: {
-                            required: true,
                             validaEmail: true
                         },
                         profissao: {
@@ -122,7 +122,15 @@
     </head>
 
     <body>
-
+        <%
+            Cliente cliente = null;
+            String cpf = request.getParameter("cpf");
+            if (cpf != null){
+                cliente = ClienteBD.getByCpf(cpf);
+            }else{
+                cliente = new Cliente();
+            }
+        %>
         <div id="wrapper">
 
             <!-- Navigation -->
@@ -150,7 +158,7 @@
                             <li><a href="#"><i class="fa fa-gear fa-fw"></i> Configurações</a>
                             </li>
                             <li class="divider"></li>
-                            <li><a href="../login/login.jsp"><i class="fa fa-sign-out fa-fw"></i> Sair</a>
+                            <li><a href="../login/sair.jsp"><i class="fa fa-sign-out fa-fw"></i> Sair</a>
                             </li>
                         </ul>
                         <!-- /.dropdown-user -->
@@ -181,10 +189,9 @@
                                 <a href="../relatorios/relatorios.jsp"><i class="fa fa-table fa-fw"></i> RELATÓRIOS</a>
                             </li>
                             <li>
-                                <a href="../estoque.html"><i class="fa fa-edit fa-fw"></i> ESTOQUE <span class="fa arrow"></span></a>
+                                <a href="estoque.html"><i class="fa fa-edit fa-fw"></i> ESTOQUE <span class="fa arrow"></span></a>
                                 <ul class="nav nav-second-level">
                                     <li>
-                                       
                                          <a href="../CadastroProduto/CadastroProduto.jsp"><i class="fa fa-cubes fa-fw"></i>Cadastro de produtos</a>
                                     </li>
                                     <li>
@@ -193,7 +200,7 @@
                                 </ul>
                             </li>
                             <li>
-                                <a href="/intranetMercadinho/pages/cliente/cadastrarCliente.jsp"><i class="fa fa-users fa-fw"></i> CLIENTES</a>
+                                <a href="../cadastrarCliente.jsp"><i class="fa fa-users fa-fw"></i> CLIENTES</a>
                             </li>
                         </ul>
                     </div>
@@ -240,26 +247,38 @@
                                                     <div class="col-md-8">
                                                         <div class="form-group">
                                                             <label>Nome Completo:</label>
-                                                            <input name="nome" type="text" class="form-control" id="nome">
+                                                            <input name="nome" type="text" class="form-control" id="nome" value="<%=cliente.getNome()%>">
                                                         </div>
                                                     </div>
                                                     <div class="col-md-2">
                                                         <div class="form-group">
                                                             <label>Sexo:</label>
+                                                            <%
+                                                            String sexoSelecionado = "";
+                                                            if (sexoSelecionado != null){
+                                                                sexoSelecionado = cliente.getSexo();
+                                                            }
+                                                            %>
                                                             <select name="sexo" class="form-control" id="sexo">
                                                                 <option value=""></option>
-                                                                <option value="masculino">Masculino</option>
-                                                                <option value="feminino">Feminino</option>
+                                                                <option value="masculino" <% if (sexoSelecionado.equals("masculino")) out.println("selected"); %>>Masculino</option>
+                                                                <option value="feminino" <% if (sexoSelecionado.equals("feminino")) out.println("selected"); %>>Feminino</option>
                                                             </select>
                                                         </div>
                                                     </div>
                                                     <div class="col-md-2">
                                                         <div class="form-group">
                                                             <label>Estado Civil:</label>
+                                                            <%
+                                                            String estadoCivilSelecionado = "";
+                                                            if (estadoCivilSelecionado != null){
+                                                                estadoCivilSelecionado = cliente.getEstadoCivil();
+                                                            }
+                                                            %>
                                                             <select name="ecivil" class="form-control" id="ecivil">
                                                                 <option value=""></option>
-                                                                <option value="solteiro">Solteiro(a)</option>
-                                                                <option value="casado">Casado(a)</option>
+                                                                <option value="solteiro" <% if (estadoCivilSelecionado.equals("solteiro")) out.println("selected"); %>>Solteiro(a)</option>
+                                                                <option value="casado"<% if (estadoCivilSelecionado.equals("casado")) out.println("selected"); %>>Casado(a)</option>
                                                             </select>
                                                         </div>
                                                     </div>
@@ -268,52 +287,58 @@
                                                     <div class="col-md-6">
                                                         <div class="form-group">
                                                             <label>Endereço:</label>
-                                                            <input name="endereco" type="text" class="form-control" id="endereco">
+                                                            <input name="endereco" type="text" class="form-control" id="endereco" value="<%=cliente.getEndereco()%>">
                                                         </div>
                                                     </div>
                                                     <div class="col-md-2">
                                                         <div class="form-group">
                                                             <label>Número:</label>
-                                                            <input name="numero" type="text" class="form-control" id="numero">
+                                                            <input name="numero" type="text" class="form-control" id="numero" value="<%=cliente.getNumero()%>">
                                                         </div>
                                                     </div>
                                                     <div class="col-md-3">
                                                         <div class="form-group">
                                                             <label>Cidade:</label>
-                                                            <input name="cidade" type="text" class="form-control" id="cidade">
+                                                            <input name="cidade" type="text" class="form-control" id="cidade" value="<%=cliente.getCidade()%>">
                                                         </div>
                                                     </div>
                                                     <div class="col-md-1">
                                                         <label>UF:</label>
+                                                        <%
+                                                        String ufSelecionado = "";
+                                                        if (ufSelecionado != null){
+                                                            ufSelecionado = cliente.getUf();
+                                                        }
+                                                        %>
                                                         <select name="uf" class="form-control" id="uf">
                                                             <option value=""></option>
-                                                            <option value="ac">AC</option>
-                                                            <option value="al">AL</option>
-                                                            <option value="am">AM</option>
-                                                            <option value="ap">AP</option>
-                                                            <option value="ba">BA</option>
-                                                            <option value="ce">CE</option>
-                                                            <option value="df">DF</option>
-                                                            <option value="es">ES</option>
-                                                            <option value="go">GO</option>
-                                                            <option value="ma">MA</option>
-                                                            <option value="mg">MG</option>
-                                                            <option value="ms">MS</option>
-                                                            <option value="mt">MT</option>
-                                                            <option value="pa">PA</option>
-                                                            <option value="pb">PB</option>
-                                                            <option value="pe">PE</option>
-                                                            <option value="pi">PI</option>
-                                                            <option value="pr">PR</option>
-                                                            <option value="rj">RJ</option>
-                                                            <option value="rn">RN</option>
-                                                            <option value="ro">RO</option>
-                                                            <option value="rr">RR</option>
-                                                            <option value="rs">RS</option>
-                                                            <option value="sc">SC</option>
-                                                            <option value="se">SE</option>
-                                                            <option value="sp">SP</option>
-                                                            <option value="to">TO</option>
+                                                            <option value="ac" <% if (ufSelecionado.equals("ac")) out.println("selected"); %>>AC</option>
+                                                            <option value="al" <% if (ufSelecionado.equals("al")) out.println("selected"); %>>AL</option>
+                                                            <option value="am" <% if (ufSelecionado.equals("am")) out.println("selected"); %>>AM</option>
+                                                            <option value="ap" <% if (ufSelecionado.equals("ap")) out.println("selected"); %>>AP</option>
+                                                            <option value="ba" <% if (ufSelecionado.equals("ba")) out.println("selected"); %>>BA</option>
+                                                            <option value="ce" <% if (ufSelecionado.equals("ce")) out.println("selected"); %>>CE</option>
+                                                            <option value="df" <% if (ufSelecionado.equals("df")) out.println("selected"); %>>DF</option>
+                                                            <option value="es" <% if (ufSelecionado.equals("es")) out.println("selected"); %>>ES</option>
+                                                            <option value="go" <% if (ufSelecionado.equals("go")) out.println("selected"); %>>GO</option>
+                                                            <option value="ma" <% if (ufSelecionado.equals("ma")) out.println("selected"); %>>MA</option>
+                                                            <option value="mg" <% if (ufSelecionado.equals("mg")) out.println("selected"); %>>MG</option>
+                                                            <option value="ms" <% if (ufSelecionado.equals("ms")) out.println("selected"); %>>MS</option>
+                                                            <option value="mt" <% if (ufSelecionado.equals("mt")) out.println("selected"); %>>MT</option>
+                                                            <option value="pa" <% if (ufSelecionado.equals("pa")) out.println("selected"); %>>PA</option>
+                                                            <option value="pb" <% if (ufSelecionado.equals("pb")) out.println("selected"); %>>PB</option>
+                                                            <option value="pe" <% if (ufSelecionado.equals("pe")) out.println("selected"); %>>PE</option>
+                                                            <option value="pi" <% if (ufSelecionado.equals("pi")) out.println("selected"); %>>PI</option>
+                                                            <option value="pr" <% if (ufSelecionado.equals("pr")) out.println("selected"); %>>PR</option>
+                                                            <option value="rj" <% if (ufSelecionado.equals("rj")) out.println("selected"); %>>RJ</option>
+                                                            <option value="rn" <% if (ufSelecionado.equals("rn")) out.println("selected"); %>>RN</option>
+                                                            <option value="ro" <% if (ufSelecionado.equals("ro")) out.println("selected"); %>>RO</option>
+                                                            <option value="rr" <% if (ufSelecionado.equals("rr")) out.println("selected"); %>>RR</option>
+                                                            <option value="rs" <% if (ufSelecionado.equals("rs")) out.println("selected"); %>>RS</option>
+                                                            <option value="sc" <% if (ufSelecionado.equals("sc")) out.println("selected"); %>>SC</option>
+                                                            <option value="se" <% if (ufSelecionado.equals("se")) out.println("selected"); %>>SE</option>
+                                                            <option value="sp" <% if (ufSelecionado.equals("sp")) out.println("selected"); %>>SP</option>
+                                                            <option value="to" <% if (ufSelecionado.equals("to")) out.println("selected"); %>>TO</option>
                                                         </select>
                                                     </div>
                                                 </div>
@@ -321,25 +346,25 @@
                                                     <div class="col-md-3">
                                                         <div class="form-group">
                                                             <label>CPF:</label>
-                                                            <input name="cpf" type="text" class="form-control" id="cpf">
+                                                            <input name="cpf" type="text" class="form-control" id="cpf" value="<%=cliente.getCpf()%>">
                                                         </div>
                                                     </div>
                                                     <div class="col-md-2">
                                                         <div class="form-group">
                                                             <label>Telefone:</label>
-                                                            <input name="telefone" type="text" class="form-control" id="telefone">
+                                                            <input name="telefone" type="text" class="form-control" id="telefone" value="<%=cliente.getTelefone()%>">
                                                         </div>
                                                     </div>
                                                     <div class="col-md-2">
                                                         <div class="form-group">
                                                             <label>Celular:</label>
-                                                            <input name="celular" type="text" class="form-control" id="celular">
+                                                            <input name="celular" type="text" class="form-control" id="celular" value="<%=cliente.getCelular()%>">
                                                         </div>
                                                     </div>
                                                     <div class="col-md-5">
                                                         <div class="form-group">
                                                             <label>E-mail:</label>
-                                                            <input name="email" type="text" class="form-control" id="email">
+                                                            <input name="email" type="text" class="form-control" id="email" value="<%=cliente.getEmail()%>">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -347,24 +372,25 @@
                                                     <div class="col-md-6">
                                                         <div class="form-group">
                                                             <label>Profissão:</label>
-                                                            <input name="profissao" type="text" class="form-control" id="profissao">
+                                                            <input name="profissao" type="text" class="form-control" id="profissao" value="<%=cliente.getProfissao()%>">
                                                         </div>
                                                     </div>
                                                     <div class="col-md-3">
                                                         <div class="form-group">
                                                             <label>Renda Mensal:</label>
-                                                            <input name="renda" type="text" class="form-control" id="renda">
+                                                            <input name="renda" type="text" class="form-control" id="renda" value="<%=cliente.getRenda()%>">
                                                         </div>
                                                     </div>
                                                     <div class="col-md-3">
                                                         <div class="form-group">
                                                             <label>Limite de Compra:</label>
-                                                            <input name="limite" type="text" class="form-control" id="limite">
+                                                            <input name="limite" type="text" class="form-control" id="limite" value="<%=cliente.getLimite()%>">
                                                         </div>
                                                     </div>
                                                 </div> <br /> 
                                                 <div class="row">
                                                     <input type="submit" name="salvar" value="Salvar" class="btn btn-primary" />
+                                                    <input type="hidden" name="idAlterado" value="<%=cpf%>" />
                                                 </div>
                                             </form>  
                                         </div>
@@ -403,7 +429,7 @@
                                                         <td><%=cadaCliente.getNome()%></td>
                                                         <td><%=cadaCliente.getCpf()%></td>
                                                         <td><%=cadaCliente.getLimite()%></td>
-                                                        <td class="center"><a href="" class="btn btn-primary">Atualizar</a></td>
+                                                        <td class="center"><a href="cadastrarCliente.jsp?cpf=<%=cadaCliente.getCpf()%>" class="btn btn-primary">Atualizar</a></td>
                                                         <td class="center"><a href="excluirCliente.jsp?codigo=<%=cadaCliente.getCodigo()%>" class="btn btn-danger">Remover</a></td>
                                                     </tr>
                                                     <%

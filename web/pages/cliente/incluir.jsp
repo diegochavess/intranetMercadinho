@@ -1,6 +1,7 @@
 <%@page import="persistencia.ClienteBD"%>
 <%@page import="dominio.Cliente"%>
 <%
+    String idAlterado = request.getParameter("idAlterado");
     String nome = request.getParameter("nome");
     String endereco = request.getParameter("endereco");
     String numero = request.getParameter("numero");
@@ -16,9 +17,6 @@
     String limite = request.getParameter("limite");
     String cpf = request.getParameter("cpf");
     
-    System.out.println("renda");
-    System.out.println(renda);
-    
     renda = renda.replace(".", "");
     renda = renda.replace(" ","");
     renda = renda.replace("R$","");
@@ -29,7 +27,12 @@
     limite = limite.replace("R$", "");
     limite = limite.replace(",", ".");
     
-    Cliente cliente = new Cliente();
+    Cliente cliente;
+    if (idAlterado != "null"){
+        cliente = ClienteBD.getByCpf(idAlterado);
+    }else{
+        cliente = new Cliente();
+    }
     cliente.setNome(nome);
     cliente.setEndereco(endereco);
     cliente.setNumero(numero);
@@ -47,6 +50,10 @@
     
     // A classe de persistência ClienteBD insere
     //o objeto cliente no banco de dados
-    ClienteBD.inserir(cliente);
-    response.sendRedirect("cadastrarCliente.jsp?status=OK");
+    if (idAlterado != "null"){
+        ClienteBD.alterar(cliente);
+    }else{
+        ClienteBD.inserir(cliente);
+        response.sendRedirect("cadastrarCliente.jsp?status=OK");
+    }
 %>

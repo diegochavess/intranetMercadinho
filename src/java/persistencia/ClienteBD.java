@@ -40,8 +40,8 @@ public class ClienteBD {
         for(int i=0; i < lista.size(); i++){
             Cliente cadaCliente = lista.get(i);
             
-            //procura o cliente que tem o CPF igual 
-            //Ã  variÃ¡vel "cpf", que tÃ¡ chegando entre
+            //procura o cliente que tem o CODIGO igual 
+            //Ã  variÃ¡vel "codigo", que tÃ¡ chegando entre
             //os parÃªnteses
             if (cadaCliente.getCodigo() == codigo){
                 lista.remove(i);
@@ -61,8 +61,8 @@ public class ClienteBD {
         for(int i=0; i < lista.size(); i++){
             Cliente cadaCliente = lista.get(i);
             
-            //procura o cliente que tem o CPF igual 
-            //Ã  variÃ¡vel "cpf", que tÃ¡ chegando entre
+            //procura o cliente que tem o NOME igual 
+            //Ã  variÃ¡vel "nome", que tÃ¡ chegando entre
             //os parÃªnteses
             if (cadaCliente.getNome().equals(nome)){
                 clienteEncontrado = cadaCliente;
@@ -72,6 +72,21 @@ public class ClienteBD {
         return clienteEncontrado;
     }
 
+    public static Cliente getByCpf(String cpf){
+        lerXml();
+        for(int i=0; i < lista.size(); i++){
+            Cliente cadaCliente = lista.get(i);
+            
+            //procura o cliente que tem o CODIGO igual 
+            //Ã  variÃ¡vel "codigo", que tÃ¡ chegando entre
+            //os parÃªnteses
+            if (cadaCliente.getCpf().equals(cpf)){
+                return cadaCliente;
+            }
+        }
+        return null;
+    }
+    
     private static void lerXml(){
         File arquivo=new File(caminho + "clientes.xml");
         if (arquivo.exists()){
