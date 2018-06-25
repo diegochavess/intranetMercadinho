@@ -13,7 +13,7 @@
         <link rel="shortcut icon" href="../img/favicon.ico" />
         <title>Mercadinho Santa Izabel</title>
 
-        
+
         <!-- Bootstrap Core CSS -->
 
 
@@ -30,8 +30,11 @@
         <!-- Custom Fonts -->
 
         <link href="../../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+
+
         <script src="../../dist/js/Chart.bundle.min.js" type="text/javascript"></script>
         <script src="../../dist/js/Chart.min.js" type="text/javascript"></script>
+
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
         <!--[if lt IE 9]>
@@ -153,7 +156,7 @@
                                         <div class="dropdown-divider"></div>
                                         <a href="#"><img style="max-height: 50px;max-width: 50px" src="../../img/Excel_2013.png" alt="Relatório Mensal - Despesas Pessoais" />  Relatório Mensal - Despesas Pessoais</a>
                                     </div>
-                                    
+
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
                                     </div>
@@ -161,74 +164,55 @@
                             </div>
                         </div>
                     </div>
-                    <div class="row">
+                   
                         <div class="col-lg-3">
-
-                            <canvas id="myChart" width="100" height="100"></canvas>
+                            <canvas id="bar-chart"></canvas>
                             <script>
-                                var ctx = document.getElementById("myChart").getContext('2d');
-                                var myChart = new Chart(ctx, {
-                                    type: 'bar',
-                                    data: {
-                                        labels: ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "setembro", "outubro", "Novembro", "Dezembro"],
-                                        datasets: [{
-                                                label: 'Lucro',
-                                                data: [12, 19, 3, 5, 2, 3, 4, 5, 8, 20, 16, 19],
-                                                backgroundColor: [
-
-                                                ],
-                                                borderColor: [
-
-                                                ],
-                                                borderWidth: 1
-                                            }]
-                                    },
-                                    options: {
-                                        scales: {
-                                            yAxes: [{
-                                                    ticks: {
-                                                        beginAtZero: true
-                                                    }
+                                var ctx = document.getElementsByClassName("bar-chart");
+                                var bar-chart = new Chart(ctx, {
+                                type: 'bar',
+                                        data: {
+                                        labels: ["janeiro", "fevereiro", "março", "abril", "maio", "junho", "julho", "agosto", "setembro", "outubro", "novembro", "dezembro"],
+                                                datasets:[
+                                                        label: "Vendas",
+                                                        data:[20, 16, 10, 17, 15, 14, 13, 15, 14, 19, 18, 23],
+                                                        backgroundColor: [
+                                                                'rgba(255, 99, 132, 0.2)',
+                                                                'rgba(54, 162, 235, 0.2)',
+                                                                'rgba(255, 206, 86, 0.2)',
+                                                                'rgba(75, 192, 192, 0.2)',
+                                                                'rgba(153, 102, 255, 0.2)',
+                                                                'rgba(255, 159, 64, 0.2)'
+                                                        ],
+                                                        borderColor: [
+                                                                'rgba(255,99,132,1)',
+                                                                'rgba(54, 162, 235, 1)',
+                                                                'rgba(255, 206, 86, 1)',
+                                                                'rgba(75, 192, 192, 1)',
+                                                                'rgba(153, 102, 255, 1)',
+                                                                'rgba(255, 159, 64, 1)'
+                                                        ],
+                                                        borderWidth: 1
                                                 }]
+                                        ,
+                                        options: {
+                                        scales: {
+                                        yAxes: [{
+                                        ticks: {
+                                        beginAtZero:true
                                         }
-                                    }
+                                        }]
+                                        }
+                                        }
                                 });
+
+
+
+
                             </script>
                         </div>
-                        <div class="col-lg-3">
+                    
 
-                            <canvas id="myChart" width="100" height="100"></canvas>
-                            <script>
-                                var ctx = document.getElementById("myChart").getContext('2d');
-                                var myChart = new Chart(ctx, {
-                                    type: 'bar',
-                                    data: {
-                                        labels: ["Higiene", "Limpeza", "Alimentos", "Frios", "Laticinios", "Carnes"],
-                                        datasets: [{
-                                                label: 'Estoque',
-                                                data: [12, 19, 3, 5, 2, 3],
-                                                backgroundColor: [
-
-                                                ],
-                                                borderColor: [
-
-                                                ],
-                                                borderWidth: 1
-                                            }]
-                                    },
-                                    options: {
-                                        scales: {
-                                            yAxes: [{
-                                                    ticks: {
-
-                                                    }
-                                                }]
-                                        }
-                                    }
-                                });
-                            </script>
-                        </div>
-                    </div>
                 </div>
 
             </div>
@@ -260,9 +244,9 @@
         <!-- Page-Level Demo Scripts - Tables - Use for reference -->
         <script>
                                 $(document).ready(function () {
-                                    $('#dataTables-example').DataTable({
-                                        responsive: true
-                                    });
+                                $('#dataTables-example').DataTable({
+                                responsive: true
+                                });
                                 });
         </script>
     </body>
