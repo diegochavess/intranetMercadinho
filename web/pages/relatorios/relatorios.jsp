@@ -278,11 +278,11 @@
                                             data: [5, 9, 7, 14, 16, 12, 15, 10, 9, 11, 13, 10],
                                             backgroundColor: [
                                                 'rgba(75, 192, 192, 0.2)',
-                                            ],
+                                            ]
 
                                             borderColor: [
                                                 'rgba(75, 192, 192, 1)',
-                                            ],
+                                            ]
                                             borderWidth: 6
                                         }]
                                 },
