@@ -164,54 +164,145 @@
                             </div>
                         </div>
                     </div>
-                   
-                        <div class="col-lg-3">
-                            <canvas id="bar-chart"></canvas>
-                            <script>
-                                var ctx = document.getElementsByClassName("bar-chart");
-                                var bar-chart = new Chart(ctx, {
+
+                    <div class="col-lg-6">
+                        <canvas id="myChart" width="400" height="400"></canvas>
+                        <script>
+                            var ctx = document.getElementById("myChart").getContext('2d');
+                            var myChart = new Chart(ctx, {
                                 type: 'bar',
-                                        data: {
-                                        labels: ["janeiro", "fevereiro", "março", "abril", "maio", "junho", "julho", "agosto", "setembro", "outubro", "novembro", "dezembro"],
-                                                datasets:[
-                                                        label: "Vendas",
-                                                        data:[20, 16, 10, 17, 15, 14, 13, 15, 14, 19, 18, 23],
-                                                        backgroundColor: [
-                                                                'rgba(255, 99, 132, 0.2)',
-                                                                'rgba(54, 162, 235, 0.2)',
-                                                                'rgba(255, 206, 86, 0.2)',
-                                                                'rgba(75, 192, 192, 0.2)',
-                                                                'rgba(153, 102, 255, 0.2)',
-                                                                'rgba(255, 159, 64, 0.2)'
-                                                        ],
-                                                        borderColor: [
-                                                                'rgba(255,99,132,1)',
-                                                                'rgba(54, 162, 235, 1)',
-                                                                'rgba(255, 206, 86, 1)',
-                                                                'rgba(75, 192, 192, 1)',
-                                                                'rgba(153, 102, 255, 1)',
-                                                                'rgba(255, 159, 64, 1)'
-                                                        ],
-                                                        borderWidth: 1
-                                                }]
-                                        ,
-                                        options: {
-                                        scales: {
-                                        yAxes: [{
-                                        ticks: {
-                                        beginAtZero:true
-                                        }
+                                data: {
+                                    labels: ["janeiro", "fevereiro", "março", "abril", "maio", "junho", "julho", "agosto", "setembro", "outubro", "novembro", "dezembro"],
+                                    datasets: [{
+                                            label: "Vendas",
+                                            data: [20, 16, 10, 17, 15, 14, 13, 15, 14, 19, 18, 23],
+                                            backgroundColor: [
+                                                'rgba(255, 159, 64, 0.2)',
+                                                'rgba(255, 159, 64, 0.2)',
+                                                'rgba(255, 159, 64, 0.2)',
+                                                'rgba(255, 159, 64, 0.2)',
+                                                'rgba(255, 159, 64, 0.2)',
+                                                'rgba(255, 159, 64, 0.2)',
+                                                'rgba(255, 159, 64, 0.2)',
+                                                'rgba(255, 159, 64, 0.2)',
+                                                'rgba(255, 159, 64, 0.2)',
+                                                'rgba(255, 159, 64, 0.2)',
+                                                'rgba(255, 159, 64, 0.2)',
+                                                'rgba(255, 159, 64, 0.2)'
+                                            ],
+
+                                            borderColor: [
+                                                'rgba(255, 159, 64, 1)',
+                                                'rgba(255, 159, 64, 1)',
+                                                'rgba(255, 159, 64, 1)',
+                                                'rgba(255, 159, 64, 1)',
+                                                'rgba(255, 159, 64, 1)',
+                                                'rgba(255, 159, 64, 1)',
+                                                'rgba(255, 159, 64, 1)',
+                                                'rgba(255, 159, 64, 1)',
+                                                'rgba(255, 159, 64, 1)',
+                                                'rgba(255, 159, 64, 1)',
+                                                'rgba(255, 159, 64, 1)',
+                                                'rgba(255, 159, 64, 1)'
+                                            ],
+                                            borderWidth: 1
                                         }]
-                                        }
-                                        }
-                                });
+                                },
+                                options: {
+                                    scales: {
+                                        yAxes: [{
+                                                ticks: {
+                                                    beginAtZero: true
+                                                }
+                                            }]
+                                    }
+                                }
+                            });
+                        </script>
+                    </div>
+                    <div class="col-lg-6">
+                        <canvas id="estoque" width="400" height="400"></canvas>
+                        <script>
+                            var ctx = document.getElementById("estoque").getContext('2d');
+                            var estoque = new Chart(ctx, {
+                                type: 'line',
+                                data: {
+                                    labels: ["janeiro", "fevereiro", "março", "abril", "maio", "junho", "julho", "agosto", "setembro", "outubro", "novembro", "dezembro"],
+                                    datasets: [{
+                                            label: "Estoque",
+                                            data: [4, 7, 10, 17, 15, 14, 13, 15, 14, 10, 9, 6],
+                                            backgroundColor: [
+                                                'rgba(255, 99, 132, 0.2)',
+                                            ],
 
+                                            borderColor: [
+                                                'rgba(255,99,132,1)',
+                                            ],
+                                            borderWidth: 6
+                                        }]
+                                },
+                                options: {
+                                    scales: {
+                                        yAxes: [{
+                                                ticks: {
+                                                    beginAtZero: true
+                                                }
+                                            }]
+                                    }
+                                }
+                            });
+                        </script>
+                    </div>
+                    <div class="col-lg-6">
+                        <canvas id="lucro" width="400" height="400"></canvas>
+                        <script>
+                            var ctx = document.getElementById("lucro").getContext('2d');
+                            var lucro = new Chart(ctx, {
+                                type: 'line',
+                                data: {
+                                    labels: ["janeiro", "fevereiro", "março", "abril", "maio", "junho", "julho", "agosto", "setembro", "outubro", "novembro", "dezembro"],
+                                    datasets: [{
+                                            label: "Lucros - 2017",
+                                            data: [4, 7, 10, 17, 15, 14, 13, 15, 14, 10, 9, 6],
+                                            backgroundColor: [
+                                                'rgba(255, 99, 132, 0.2)',
+                                            ],
 
+                                            borderColor: [
+                                                'rgba(255,99,132,1)',
+                                            ],
+                                            borderWidth: 6
+                                        },
+                                        {
+                                            label: "Lucros - 2018",
+                                            data: [5, 9, 7, 14, 16, 12, 15, 10, 9, 11, 13, 10],
+                                            backgroundColor: [
+                                                'rgba(75, 192, 192, 0.2)',
+                                            ],
 
+                                            borderColor: [
+                                                'rgba(75, 192, 192, 1)',
+                                            ],
+                                            borderWidth: 6
+                                        }]
+                                },
 
-                            </script>
-                        </div>
-                    
+                                options: {
+                                    
+                                    scales: {
+                                        yAxes: [{
+                                                ticks: {
+                                                    beginAtZero: true
+                                                }
+                                            }]
+                                    }
+                                   
+                                   
+                                }
+                            });
+                        </script>
+                    </div>
+
 
                 </div>
 
@@ -243,11 +334,11 @@
 
         <!-- Page-Level Demo Scripts - Tables - Use for reference -->
         <script>
-                                $(document).ready(function () {
+                            $(document).ready(function () {
                                 $('#dataTables-example').DataTable({
-                                responsive: true
+                                    responsive: true
                                 });
-                                });
+                            });
         </script>
     </body>
 </html>
