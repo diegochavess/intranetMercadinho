@@ -13,7 +13,7 @@ import java.util.ArrayList;
  */
 public class FornecedorBD {
     private static ArrayList<Fornecedor> lista = new ArrayList<Fornecedor>();
-    private static String caminho = "D:\\";
+    private static String caminho = "C:\\Users\\behbr\\Documents\\NetBeansProjects\\";
     public static void inserir(Fornecedor novoFornecedor){
         lerXml();
         lista.add(novoFornecedor);
@@ -21,15 +21,15 @@ public class FornecedorBD {
     }
     
     public static void alterar(Fornecedor fornecedorAlterado){
-        excluir(fornecedorAlterado.getCodigo());
+        excluir(fornecedorAlterado.getCpf());
         inserir(fornecedorAlterado);
 }
 
-    public static void excluir(String codigo){
+    public static void excluir(String cpf){
         lerXml();
         for(int i=0; i < lista.size(); i++){
             Fornecedor cadaFornecedor = lista.get(i);
-            if (cadaFornecedor.getCodigo().equals(codigo)){
+            if (cadaFornecedor.getCpf().equals(cpf)){
             lista.remove(i);
             break;
         }
@@ -44,7 +44,7 @@ public class FornecedorBD {
         lerXml();
         for(int i=0; i < lista.size(); i++){
             Fornecedor cadaFornecedor = lista.get(i);
-            if (cadaFornecedor.getCodigo().equals(cpf)){
+            if (cadaFornecedor.getCpf().equals(cpf)){
             return cadaFornecedor;
             
         }

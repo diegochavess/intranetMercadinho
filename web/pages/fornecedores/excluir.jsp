@@ -2,5 +2,5 @@
 <%
     String cpf = request.getParameter("cpf");
     FornecedorBD.excluir(cpf);
-    response.sendRedirect("listar.jsp");
+    response.sendRedirect("cadastrarFornecedor.jsp");
 %>

@@ -1,3 +1,4 @@
+<%@page import="java.text.SimpleDateFormat"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="persistencia.FornecedorBD"%>
 <%@page import="dominio.Fornecedor"%>
@@ -87,7 +88,7 @@
                     },
                     celular: {
                         required: true,
-                        minlength: 14,
+                        minlength: 10,
                     },
 
                     email: {
@@ -390,6 +391,7 @@
                                         <!-- /.panel-heading -->
                                         <div class="panel-body">
                                             <%
+                                                SimpleDateFormat formato= new SimpleDateFormat("dd/MM/yyyy");
                                                 ArrayList<Fornecedor> lista = FornecedorBD.listar();
                                             %>
                                             <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
@@ -410,13 +412,15 @@
                                                     <tr class="odd gradeX">
                                                         <td><%=cadaFornecedor.getEmpresa()%></td>
                                                         <td><%=cadaFornecedor.getCpf()%></td>
-                                                        <td><%=cadaFornecedor.getData()%></td>
-                                                        <td class="center"><a href="" class="btn btn-primary">Atualizar</a></td>
-                                                        <td class="center"><a href="excluirFornecedor.jsp?cpf=<%=cadaFornecedor.getCpf()%>" class="btn btn-danger">Remover</a></td>
+                                                        <td><%=formato.format(cadaFornecedor.getData())%></td>
+                                                        <td class="center"><a href="" class="btn btn-primary">Alterar</a></td>
+                                                        <td class="center"><a href="excluir.jsp?cpf=<%=cadaFornecedor.getCpf()%>"  class="btn btn-danger"onclick="return confirm('Deseja realmente excluir?')">Remover</a></td>
                                                     </tr>
                                                     <%
                                                         }
                                                     %>
+                                                    
+                                                    
                                                 </tbody>
                                             </table>
                                         </div>
