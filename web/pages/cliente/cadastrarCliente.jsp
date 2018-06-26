@@ -1,5 +1,4 @@
-<%@page import="java.text.NumberFormat"%>
-<%@page import="java.util.Locale"%>
+<%@page import="java.text.DecimalFormat"%>
 <%@page import="persistencia.ClienteBD"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="dominio.Cliente"%>
@@ -382,6 +381,7 @@
                                         <!-- /.panel-heading -->
                                         <div class="panel-body">
                                             <%
+                                                DecimalFormat formato = new DecimalFormat("#.##");
                                                 ArrayList<Cliente> lista = ClienteBD.listar();
                                             %>
                                             <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
@@ -402,9 +402,9 @@
                                                     <tr class="odd gradeX">
                                                         <td><%=cadaCliente.getNome()%></td>
                                                         <td><%=cadaCliente.getCpf()%></td>
-                                                        <td><%=cadaCliente.getLimite()%></td>
+                                                        <td><%=formato.format(cadaCliente.getLimite())%></td>
                                                         <td class="center"><a href="#" class="btn btn-primary">Atualizar</a></td>
-                                                        <td class="center"><a href="excluirCliente.jsp?codigo=<%=cadaCliente.getCodigo()%>" class="btn btn-danger">Remover</a></td>
+                                                        <td class="center"><a href="excluirCliente.jsp?codigo=<%=cadaCliente.getCodigo()%>" class="btn btn-danger" onclick="return confirm('Deseja realmente remover esse cliente?')">Remover</a></td>
                                                     </tr>
                                                     <%
                                                         }

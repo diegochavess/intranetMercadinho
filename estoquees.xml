@@ -1,0 +1,10 @@
+<list>
+  <estoque>
+    <empresa>Coca-Cola Industrias LTDA</empresa>
+    <numCompra>1</numCompra>
+    <tipoCompra>a vista</tipoCompra>
+    <valorCompra>1600.0</valorCompra>
+    <dataCompra>25/06/2018</dataCompra>
+    <venceCompra>26/06/2020</venceCompra>
+  </estoque>
+</list>

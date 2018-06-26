@@ -13,7 +13,7 @@ import java.util.ArrayList;
  */
 public class FornecedorBD {
     private static ArrayList<Fornecedor> lista = new ArrayList<Fornecedor>();
-    private static String caminho = "C:\\Users\\behbr\\Documents\\NetBeansProjects\\";
+    private static String caminho = "D:\\FATEC\\2 Semestre\\PI\\IntranetMercadinho\\";
     public static void inserir(Fornecedor novoFornecedor){
         lerXml();
         lista.add(novoFornecedor);

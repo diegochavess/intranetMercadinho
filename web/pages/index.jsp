@@ -1,5 +1,7 @@
 <%@page import="persistencia.CadastroProdutoBD"%>
+<%@page import="persistencia.ClienteBD"%>
 <%@page import="dominio.CadastroProduto"%>
+<%@page import="dominio.Cliente"%>
 <%@page import="java.util.ArrayList"%>
 
 <!DOCTYPE html>
@@ -210,7 +212,10 @@
                                         <i class="fa fa-users fa-5x"></i>
                                     </div>
                                     <div class="col-xs-9 text-right">
-                                        <div class="huge">329</div>
+                                        <%
+                                            ArrayList<Cliente> lista = ClienteBD.listar();
+                                        %>
+                                        <div class="huge"><%=lista.size()%></div>
                                         <div>CLIENTES</div>
                                     </div>
                                 </div>

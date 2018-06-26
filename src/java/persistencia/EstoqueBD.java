@@ -7,7 +7,7 @@ import java.io.FileWriter;
 import java.util.ArrayList;
 public class EstoqueBD {
     
-    private static String caminho = "D:\\";
+    private static String caminho = "D:\\FATEC\\2 Semestre\\PI\\IntranetMercadinho\\";
     
     private static ArrayList<Estoque> lista = new ArrayList<Estoque>();
     //adiciona um objeto da classe Estoque 

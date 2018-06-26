@@ -336,8 +336,8 @@
                                                                     <td><%=cadaCadastroProduto.getPreco()%></td>
                                                                     <td><%=cadaCadastroProduto.getEstoqueMinimo()%></td>
                                                                     <td><%=cadaCadastroProduto.getEstoqueAtual()%></td>
-                                                                    <td class="center"><a href="excluir.jsp?codigoProduto=<%=cadaCadastroProduto.getCodigoProduto()%>" onclick="return confirm('Deseja realmente excluir?')">Excluir</a></td>
-                                                                    <td class="center"><a href="cadastroProduto.jsp?codigoProduto=<%=cadaCadastroProduto.getCodigoProduto()%>">Alterar</a></td>
+                                                                    <td class="center"><a href="excluir.jsp?codigoProduto=<%=cadaCadastroProduto.getCodigoProduto()%>" class="btn btn-danger" onclick="return confirm('Deseja realmente excluir?')">Excluir</a></td>
+                                                                    <td class="center"><a href="cadastroProduto.jsp?codigoProduto=<%=cadaCadastroProduto.getCodigoProduto()%>" class="btn btn-primary">Alterar</a></td>
                                                                 </tr>
                                                                 <%
                                                                     }

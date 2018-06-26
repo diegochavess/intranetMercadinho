@@ -1,14 +1,5 @@
 <list>
   <cadastroProduto>
-    <codigoProduto>1</codigoProduto>
-    <produto>Papel Higi?nico</produto>
-    <grupo>1</grupo>
-    <unidade>FAR</unidade>
-    <preco>500.0</preco>
-    <estoqueMinimo>500</estoqueMinimo>
-    <estoqueAtual>1000</estoqueAtual>
-  </cadastroProduto>
-  <cadastroProduto>
     <codigoProduto>2</codigoProduto>
     <produto>Lapiseira Azul 0.7</produto>
     <grupo>4</grupo>
@@ -18,12 +9,21 @@
     <estoqueAtual>250</estoqueAtual>
   </cadastroProduto>
   <cadastroProduto>
-    <codigoProduto>3</codigoProduto>
-    <produto>Caneta esferográfica azul BIC </produto>
-    <grupo>4</grupo>
+    <codigoProduto>4</codigoProduto>
+    <produto>Arroz RAROZ 5Kg</produto>
+    <grupo>2</grupo>
     <unidade>UND</unidade>
-    <preco>100.0</preco>
-    <estoqueMinimo>500</estoqueMinimo>
-    <estoqueAtual>675</estoqueAtual>
+    <preco>11.8</preco>
+    <estoqueMinimo>50</estoqueMinimo>
+    <estoqueAtual>100</estoqueAtual>
+  </cadastroProduto>
+  <cadastroProduto>
+    <codigoProduto>5</codigoProduto>
+    <produto>Leite Desnatado JUSSARA</produto>
+    <grupo>2</grupo>
+    <unidade>UND</unidade>
+    <preco>3.59</preco>
+    <estoqueMinimo>20</estoqueMinimo>
+    <estoqueAtual>76</estoqueAtual>
   </cadastroProduto>
 </list>

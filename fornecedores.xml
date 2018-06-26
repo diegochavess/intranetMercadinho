@@ -1,0 +1,28 @@
+<list>
+  <fornecedor>
+    <codigo>2</codigo>
+    <cpf>294.619.716-64</cpf>
+    <data>2018-06-19 03:00:00.0 UTC</data>
+    <cidade>Rio de Janeiro</cidade>
+    <uf>rj</uf>
+    <numero>1900</numero>
+    <telefone>(12)2222-2222</telefone>
+    <celular>(33)33333-3333</celular>
+    <email>ultragaz@sa.com</email>
+    <empresa>Companhia Ultragaz S.A</empresa>
+    <endereco>Avenida Presidente Vargas</endereco>
+  </fornecedor>
+  <fornecedor>
+    <codigo>1</codigo>
+    <cpf>526.989.846-27</cpf>
+    <data>2018-06-25 03:00:00.0 UTC</data>
+    <cidade>Rio de Janeiro</cidade>
+    <uf>rj</uf>
+    <numero>1289</numero>
+    <telefone>(12)2222-2222</telefone>
+    <celular>(33)33333-3333</celular>
+    <email>coca@cola.com.br</email>
+    <empresa>Coca-Cola Industrias LTDA</empresa>
+    <endereco>Avenida Presidente Vargas</endereco>
+  </fornecedor>
+</list>

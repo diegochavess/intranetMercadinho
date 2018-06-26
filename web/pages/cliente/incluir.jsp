@@ -1,5 +1,3 @@
-<%@page import="java.text.NumberFormat"%>
-<%@page import="java.math.BigDecimal"%>
 <%@page import="persistencia.ClienteBD"%>
 <%@page import="dominio.Cliente"%>
 <%

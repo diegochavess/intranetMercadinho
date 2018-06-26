@@ -138,7 +138,7 @@
                         <span class="icon-bar"></span>
                     </button>
                 
-                    <a class="navbar-brand" href="../index.html">Página Inicial</a>
+                    <a class="navbar-brand" href="../index.jsp">Página Inicial</a>
                 </div>
                 <!-- /.navbar-header -->
 
@@ -154,7 +154,7 @@
                             <li><a href="#"><i class="fa fa-gear fa-fw"></i> Configurações</a>
                             </li>
                             <li class="divider"></li>
-                            <li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i> Sair</a>
+                            <li><a href="../login/sair.jsp"><i class="fa fa-sign-out fa-fw"></i> Sair</a>
                             </li>
                         </ul>
                         <!-- /.dropdown-user -->
