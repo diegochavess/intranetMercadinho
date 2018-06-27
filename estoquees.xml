@@ -1,10 +1,18 @@
 <list>
   <estoque>
-    <empresa>Coca-Cola Industrias LTDA</empresa>
-    <numCompra>1</numCompra>
+    <empresa>Companhia Ultragaz S.A</empresa>
+    <numCompra>2</numCompra>
     <tipoCompra>a vista</tipoCompra>
-    <valorCompra>1600.0</valorCompra>
-    <dataCompra>25/06/2018</dataCompra>
-    <venceCompra>26/06/2020</venceCompra>
+    <valorCompra>5500.0</valorCompra>
+    <dataCompra>27/06/2018</dataCompra>
+    <venceCompra>29/12/2019</venceCompra>
+  </estoque>
+  <estoque>
+    <empresa>Unilever Brasil</empresa>
+    <numCompra>3</numCompra>
+    <tipoCompra>credito</tipoCompra>
+    <valorCompra>2300.0</valorCompra>
+    <dataCompra>15/06/2018</dataCompra>
+    <venceCompra>07/12/2018</venceCompra>
   </estoque>
 </list>
