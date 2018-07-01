@@ -1,3 +1,4 @@
+<%@page import="persistencia.FornecedorBD"%>
 <%@page import="persistencia.CadastroProdutoBD"%>
 <%@page import="persistencia.ClienteBD"%>
 <%@page import="dominio.CadastroProduto"%>
@@ -142,6 +143,7 @@
                                         <i class="fa fa-group fa-5x"></i>
                                     </div>
                                     <div class="col-xs-9 text-right">
+                                        
                                         <div class="huge">32</div>
                                         <div>FORNECEDORES</div>
                                     </div>
